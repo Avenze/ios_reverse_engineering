@@ -1,0 +1,29 @@
+{
+	"m_AssetBundleName": "edfeb41a991d38367c078d9476a5205c.bundle",
+	"m_Container": {
+		"Assets/Scripts/Framework/LuaMonoBase.txt": {
+			"m_Asset": { "m_Collection": "cab-b5b6d87b9bdc3b60d5dc2de6824ba992", "m_PathID": 3894334524254572849 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-b5b6d87b9bdc3b60d5dc2de6824ba992", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-b5b6d87b9bdc3b60d5dc2de6824ba992", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "edfeb41a991d38367c078d9476a5205c.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-b5b6d87b9bdc3b60d5dc2de6824ba992", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-b5b6d87b9bdc3b60d5dc2de6824ba992", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-b5b6d87b9bdc3b60d5dc2de6824ba992", "m_PathID": 3894334524254572849 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

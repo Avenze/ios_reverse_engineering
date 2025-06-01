@@ -1,0 +1,90 @@
+--local Class = require("Framework.Lua.Class")
+--local Person = require "GamePlay.Floors.Actors.Person"
+--local EventManager = require("Framework.Event.Manager")
+--
+--local UnityHelper = CS.Common.Utils.UnityHelper
+--local GameObject = CS.UnityEngine.GameObject
+--local Vector3 = CS.UnityEngine.Vector3
+--
+--local FloatUI = GameTableDefine.FloatUI
+--local CfgMgr = GameTableDefine.ConfigMgr
+--local FloorMode = GameTableDefine.FloorMode
+--local GameClockManager = GameTableDefine.GameClockManager
+--local TimeManager = GameTimeManager
+--local ConfigMgr = GameTableDefine.ConfigMgr
+--
+--local PetAI = Class("PetAI", Person)
+--
+----
+--function PetAI:Init(rootGo, skinPath, initPos, moveSpeed, size)
+--    self.super.Init(self, rootGo, skinPath, initPos)
+--    self.moveSpeed = moveSpeed or ConfigMgr.config_global.Batman_walkspeed
+--    self.sizeScale = size or 1
+--    self.lastTime = 0
+--    self.waitTime = 0
+--end
+--
+--function PetAI:Update(dt)
+--    self.super.Update(self, dt)
+--end
+--
+--function PetAI:Exit()
+--    self.super.Exit(self)
+--end
+--
+--function PetAI:Event(msg, params)
+--    self.super.Event(self, msg, params)
+--end
+----重写状态机
+--function PetAI:OverrideStates()
+--    ----------------------------------------------------------------------StateLoading(加载状态)
+--    --刚刚加载出来时会进入此状态,后自动进入Idle
+--    local StateLoading = self:OverrideState(self.StateLoading)
+--    function StateLoading:Event(person, msg, params)
+--        self.super.Event(self, person, msg)
+--        if msg == person.LOADING_COMPLETE then
+--            person:SetState(person.StateIdle)
+--            person.m_go.transform.localScale = Vector3(person.sizeScale,person.sizeScale,person.sizeScale)
+--        end
+--    end
+--    ----------------------------------------------------------------------StateWalk(走路状态)
+--    local StateWalk = self:OverrideState(self.StateWalk)
+--    function StateWalk:Enter(person, msg, params)
+--        self.super.Enter(self, person, params)
+--    end
+--    --走路中的事件响应
+--    function StateWalk:Event(person, msg, params)
+--        self.super.Event(self, person, msg)
+--        --走到了目标点
+--        if msg == person.EVENT_ARRIVE_FINAL_TARGET then
+--            person.lastTime = TimeManager:GetSocketTime()
+--            person:SetState(person.StateIdle)
+--        end
+--    end
+--    ----------------------------------------------------------------------StateIdle(站立状态)
+--    local StateIdle = self:OverrideState(self.StateIdle)
+--    function StateIdle:Enter(person, msg, params)
+--        self.super.Enter(self, person, params)
+--    end
+--    function StateIdle:Update(person, dt)
+--        if TimeManager:GetSocketTime() - (person.lastTime or 0) < person.waitTime then
+--            return
+--        end
+--
+--        person.waitTime = math.random(3,10)
+--        self.super.Update(self, person, dt)
+--        person.lastTime = TimeManager:GetSocketTime()
+--        person:Event(PetAI.EVENT_MOVE)
+--    end
+--
+--    function StateIdle:Event(person, msg)
+--        self.super.Event(self, person, msg)
+--        if msg == PetAI.EVENT_MOVE then
+--            local go = FloorMode:GetScene():GetOnePlace();
+--            local params = {tragetPosition = go, speed = person.moveSpeed}
+--            person:SetState(person.StateWalk, params)
+--        end
+--    end
+--end
+--
+--return PetAI

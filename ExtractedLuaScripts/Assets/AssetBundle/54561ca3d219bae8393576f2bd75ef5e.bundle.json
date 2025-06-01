@@ -1,0 +1,53 @@
+{
+	"m_AssetBundleName": "54561ca3d219bae8393576f2bd75ef5e.bundle",
+	"m_Container": {
+		"Assets/Scripts/GameBase/ConfigMgr.txt": {
+			"m_Asset": { "m_Collection": "cab-af51c554fad25acdfc74b478c8955014", "m_PathID": -3780468879024944381 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GameBase/GameConfig.txt": {
+			"m_Asset": { "m_Collection": "cab-af51c554fad25acdfc74b478c8955014", "m_PathID": 7787328575516615710 },
+			"m_PreloadIndex": 4,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GameBase/GameDataBase.txt": {
+			"m_Asset": { "m_Collection": "cab-af51c554fad25acdfc74b478c8955014", "m_PathID": -1913613096798254432 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GameBase/GameEntry.txt": {
+			"m_Asset": { "m_Collection": "cab-af51c554fad25acdfc74b478c8955014", "m_PathID": 7353733114076729800 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GameBase/GameTableDefine.txt": {
+			"m_Asset": { "m_Collection": "cab-af51c554fad25acdfc74b478c8955014", "m_PathID": 2996691129435432343 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-af51c554fad25acdfc74b478c8955014", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-af51c554fad25acdfc74b478c8955014", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "54561ca3d219bae8393576f2bd75ef5e.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-af51c554fad25acdfc74b478c8955014", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-af51c554fad25acdfc74b478c8955014", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-af51c554fad25acdfc74b478c8955014", "m_PathID": -1913613096798254432 },
+		{ "m_Collection": "cab-af51c554fad25acdfc74b478c8955014", "m_PathID": 2996691129435432343 },
+		{ "m_Collection": "cab-af51c554fad25acdfc74b478c8955014", "m_PathID": -3780468879024944381 },
+		{ "m_Collection": "cab-af51c554fad25acdfc74b478c8955014", "m_PathID": 7353733114076729800 },
+		{ "m_Collection": "cab-af51c554fad25acdfc74b478c8955014", "m_PathID": 7787328575516615710 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

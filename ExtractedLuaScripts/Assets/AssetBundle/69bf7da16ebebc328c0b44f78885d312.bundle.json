@@ -1,0 +1,53 @@
+{
+	"m_AssetBundleName": "69bf7da16ebebc328c0b44f78885d312.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/City/CarScene.txt": {
+			"m_Asset": { "m_Collection": "cab-78a3e480c465de2786a4cf32749025bf", "m_PathID": -6662624771887787163 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/City/CityMode.txt": {
+			"m_Asset": { "m_Collection": "cab-78a3e480c465de2786a4cf32749025bf", "m_PathID": -7914134450722722882 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/City/CityScene.txt": {
+			"m_Asset": { "m_Collection": "cab-78a3e480c465de2786a4cf32749025bf", "m_PathID": -212925854587802359 },
+			"m_PreloadIndex": 4,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/City/CountryMode.txt": {
+			"m_Asset": { "m_Collection": "cab-78a3e480c465de2786a4cf32749025bf", "m_PathID": -8450299837959014635 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/City/SceneCity.txt": {
+			"m_Asset": { "m_Collection": "cab-78a3e480c465de2786a4cf32749025bf", "m_PathID": 4035610423601366397 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-78a3e480c465de2786a4cf32749025bf", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-78a3e480c465de2786a4cf32749025bf", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "69bf7da16ebebc328c0b44f78885d312.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-78a3e480c465de2786a4cf32749025bf", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-78a3e480c465de2786a4cf32749025bf", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-78a3e480c465de2786a4cf32749025bf", "m_PathID": -6662624771887787163 },
+		{ "m_Collection": "cab-78a3e480c465de2786a4cf32749025bf", "m_PathID": 4035610423601366397 },
+		{ "m_Collection": "cab-78a3e480c465de2786a4cf32749025bf", "m_PathID": -8450299837959014635 },
+		{ "m_Collection": "cab-78a3e480c465de2786a4cf32749025bf", "m_PathID": -7914134450722722882 },
+		{ "m_Collection": "cab-78a3e480c465de2786a4cf32749025bf", "m_PathID": -212925854587802359 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

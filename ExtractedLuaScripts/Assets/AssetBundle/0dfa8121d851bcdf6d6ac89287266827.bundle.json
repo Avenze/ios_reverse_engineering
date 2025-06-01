@@ -1,0 +1,47 @@
+{
+	"m_AssetBundleName": "0dfa8121d851bcdf6d6ac89287266827.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/QuestionSurvey/UI/QuestionSurveyNewUI.txt": {
+			"m_Asset": { "m_Collection": "cab-0150d5960415bbe4cb3262cb76f9690b", "m_PathID": 7438786691237758034 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/QuestionSurvey/UI/QuestionSurveyNewUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-0150d5960415bbe4cb3262cb76f9690b", "m_PathID": -6213191511064012708 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/QuestionSurvey/UI/QuestionSurveyUI.txt": {
+			"m_Asset": { "m_Collection": "cab-0150d5960415bbe4cb3262cb76f9690b", "m_PathID": -4190969154544121546 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/QuestionSurvey/UI/QuestionSurveyUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-0150d5960415bbe4cb3262cb76f9690b", "m_PathID": 2783503564810565729 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-0150d5960415bbe4cb3262cb76f9690b", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-0150d5960415bbe4cb3262cb76f9690b", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "0dfa8121d851bcdf6d6ac89287266827.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-0150d5960415bbe4cb3262cb76f9690b", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-0150d5960415bbe4cb3262cb76f9690b", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-0150d5960415bbe4cb3262cb76f9690b", "m_PathID": 7438786691237758034 },
+		{ "m_Collection": "cab-0150d5960415bbe4cb3262cb76f9690b", "m_PathID": -6213191511064012708 },
+		{ "m_Collection": "cab-0150d5960415bbe4cb3262cb76f9690b", "m_PathID": 2783503564810565729 },
+		{ "m_Collection": "cab-0150d5960415bbe4cb3262cb76f9690b", "m_PathID": -4190969154544121546 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

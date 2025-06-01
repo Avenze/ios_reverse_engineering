@@ -1,0 +1,83 @@
+{
+	"m_AssetBundleName": "4b3fed3530d1aaa7ce049d546229d326.bundle",
+	"m_Container": {
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/CompanyEmployee/EmployeeDismissState.txt": {
+			"m_Asset": { "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": 1921096027768493994 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/CompanyEmployee/EmployeeGoToToiletState.txt": {
+			"m_Asset": { "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": -477496568581141631 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/CompanyEmployee/EmployeeGoToWorkState.txt": {
+			"m_Asset": { "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": 5888055268239003209 },
+			"m_PreloadIndex": 8,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/CompanyEmployee/EmployeeInBusState.txt": {
+			"m_Asset": { "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": -7815051754754093266 },
+			"m_PreloadIndex": 7,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/CompanyEmployee/EmployeeOffWorkState.txt": {
+			"m_Asset": { "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": 292786707119444082 },
+			"m_PreloadIndex": 9,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/CompanyEmployee/EmployeeQueueUpState.txt": {
+			"m_Asset": { "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": -9129884338584754442 },
+			"m_PreloadIndex": 5,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/CompanyEmployee/EmployeeSittingState.txt": {
+			"m_Asset": { "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": 3197172030402494301 },
+			"m_PreloadIndex": 4,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/CompanyEmployee/EmployeeStandUpState.txt": {
+			"m_Asset": { "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": 6308851086588285237 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/CompanyEmployee/EmployeeToiletState.txt": {
+			"m_Asset": { "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": -8796726256155852277 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/CompanyEmployee/EmployeeWorkState.txt": {
+			"m_Asset": { "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": -8782340936830604828 },
+			"m_PreloadIndex": 6,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "4b3fed3530d1aaa7ce049d546229d326.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": -8796726256155852277 },
+		{ "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": -477496568581141631 },
+		{ "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": 1921096027768493994 },
+		{ "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": 6308851086588285237 },
+		{ "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": 3197172030402494301 },
+		{ "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": -9129884338584754442 },
+		{ "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": -8782340936830604828 },
+		{ "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": -7815051754754093266 },
+		{ "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": 5888055268239003209 },
+		{ "m_Collection": "cab-bbe585c02909f9c0b045c41700836c69", "m_PathID": 292786707119444082 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

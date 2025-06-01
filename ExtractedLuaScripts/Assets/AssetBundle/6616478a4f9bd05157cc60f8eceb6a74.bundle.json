@@ -1,0 +1,29 @@
+{
+	"m_AssetBundleName": "6616478a4f9bd05157cc60f8eceb6a74.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/CycleInstance/Toy/AI/InstanceChild/CycleToyChildPlay.txt": {
+			"m_Asset": { "m_Collection": "cab-eaa18f6658c00c3298c966c3a74492fe", "m_PathID": -1828452264851392901 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-eaa18f6658c00c3298c966c3a74492fe", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-eaa18f6658c00c3298c966c3a74492fe", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "6616478a4f9bd05157cc60f8eceb6a74.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-eaa18f6658c00c3298c966c3a74492fe", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-eaa18f6658c00c3298c966c3a74492fe", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-eaa18f6658c00c3298c966c3a74492fe", "m_PathID": -1828452264851392901 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

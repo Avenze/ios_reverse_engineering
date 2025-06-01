@@ -1,0 +1,29 @@
+{
+	"m_AssetBundleName": "9b7cae38f2f27c0fd31771380cd38662.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/QuestionSurvey/QuestionSurveyDataManager.txt": {
+			"m_Asset": { "m_Collection": "cab-d5a87b3c78acbea35cc45e8e2f18c532", "m_PathID": -7368449424532070209 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-d5a87b3c78acbea35cc45e8e2f18c532", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-d5a87b3c78acbea35cc45e8e2f18c532", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "9b7cae38f2f27c0fd31771380cd38662.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-d5a87b3c78acbea35cc45e8e2f18c532", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-d5a87b3c78acbea35cc45e8e2f18c532", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-d5a87b3c78acbea35cc45e8e2f18c532", "m_PathID": -7368449424532070209 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

@@ -1,0 +1,29 @@
+{
+	"m_AssetBundleName": "ae4c3fc91b157a0f0260bc1266f41898.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/ClockOut/ClockOutDataManager.txt": {
+			"m_Asset": { "m_Collection": "cab-83ed906f7b4f3a7295530acae0a09cbe", "m_PathID": 2458756421586560644 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-83ed906f7b4f3a7295530acae0a09cbe", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-83ed906f7b4f3a7295530acae0a09cbe", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "ae4c3fc91b157a0f0260bc1266f41898.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-83ed906f7b4f3a7295530acae0a09cbe", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-83ed906f7b4f3a7295530acae0a09cbe", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-83ed906f7b4f3a7295530acae0a09cbe", "m_PathID": 2458756421586560644 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

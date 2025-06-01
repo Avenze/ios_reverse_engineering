@@ -1,0 +1,29 @@
+{
+	"m_AssetBundleName": "10a9e5aaff96081582b426f8cf5e2985.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/CEOFeature/CEODataManager.txt": {
+			"m_Asset": { "m_Collection": "cab-72e99bf2fa1eaac7aab87040f9de57ee", "m_PathID": -4147741496720551804 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-72e99bf2fa1eaac7aab87040f9de57ee", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-72e99bf2fa1eaac7aab87040f9de57ee", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "10a9e5aaff96081582b426f8cf5e2985.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-72e99bf2fa1eaac7aab87040f9de57ee", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-72e99bf2fa1eaac7aab87040f9de57ee", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-72e99bf2fa1eaac7aab87040f9de57ee", "m_PathID": -4147741496720551804 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

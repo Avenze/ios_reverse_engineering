@@ -1,0 +1,706 @@
+--local Class = require("Framework.Lua.Class")
+--local Actor = require("GamePlay.Floors.Actors.Actor")
+--local GameResMgr = require("GameUtils.GameResManager")
+--local UIView = require("Framework.UI.View")
+--local Interactions = require "GamePlay.Floors.Actors.Interactions"
+---- local Lounge = require "GamePlay.Floors.Actors.Lounge"
+--local EventManager = require("Framework.Event.Manager")
+--
+--local FloatUI = GameTableDefine.FloatUI
+--local CfgMgr = GameTableDefine.ConfigMgr
+--local FloorMode = GameTableDefine.FloorMode
+--local MeetingEventManager = GameTableDefine.MeetingEventManager
+--local CountryMode = GameTableDefine.CountryMode
+--local TimeManager = GameTimeManager
+--
+--local Random = CS.UnityEngine.Random
+--local Quaternion = CS.UnityEngine.Quaternion
+--local GameObject = CS.UnityEngine.GameObject
+--local DotweenUtil = CS.Common.Utils.DotweenUtil
+--local UnityHelper = CS.Common.Utils.UnityHelper
+--local Vector3 = CS.UnityEngine.Vector3
+--local SimpleSmoothModifier = CS.Pathfinding.SimpleSmoothModifier
+--local AnimationUtil = CS.Common.Utils.AnimationUtil
+--
+--local Person = Class("Person", Actor)
+--
+--local STATE_LOADING = "StateLoading"
+--local STATE_IDLE = "StateIdle"
+--local STATE_SITTING = "StateSitting"
+--local STATE_WORK = "StateWork"
+--local STATE_STANDUP = "StateStandup"
+--local STATE_WALK = "StateWalk"
+--
+--local STATE_TOILET = "StateToilet"
+--local STATE_MEETING = "StateMeeting"
+--local STATE_REST = "StateRest"
+--local STATE_IN_BUS = "StateInBus"
+--local STATE_QUEUE_UP = "StateQueueUp"
+--local STATE_SERVICE = "StateService"
+--local STATE_INSTANCE_EATING = "StateInstanceEating"
+--local STATE_INSTANCE_SLEEPING = "StateInstanceSleeping"
+--local STATE_INSTANCE_EVENT_WALK_BACK = "StateWalkBack"
+--
+--local calcPathQuequ = {}
+--local calcPathWork = false
+--
+--local vectorZero = Vector3(0,0,0)
+--
+--local PERSON_ACTION = {
+--    IDLE = 1,
+--    IDLE2SIT = 2,
+--    WORK = 3,
+--    SIT2IDLE = 4,
+--    WALK = 5,
+--    RUN = 6,
+--    DANCE = 7,
+--    SIT = 8,
+--    POO = 9,
+--
+--    REST1 = 10,
+--    REST2 = 11,
+--    REST3 = 12,
+--    REST4 = 13,
+--    REST5 = 14,
+--    REST6 = 15,
+--    REST7 = 16,
+--
+--    DARTS1 = 17,
+--    DARTS2 = 18,
+--
+--    GOLF1 = 19,
+--    GOLF2 = 20,
+--    WATCH = 21,
+--    GAMING = 22,
+--
+--    DANCE1 = 23,
+--    DANCE2 = 24,
+--    DANCE3 = 25,
+--    DANCE4 = 26,
+--
+--    OBSERVE = 27,
+--    SHOPPING = 28,
+--    DRINGK_KING = 29,
+--
+--    REPAIR = 30,
+--}
+--
+--Person.EVENT_IDLE_END = 101
+--Person.EVENT_IDLE2SIT_END = 102
+--Person.EVENT_WORK_END = 103
+--Person.EVENT_SIT2IDLE_END = 104
+--Person.EVENT_WALK_END = 105
+--Person.EVENT_WALK_CALC_PATH = 106
+--Person.EVENT_TURN_END = 107
+--Person.EVENT_ARRIVE_FINAL_TARGET = 108
+--
+--function Person:ctor()
+--    self:getSuper(Person).ctor(self)
+--    self.m_aiPath = nil
+--end
+--
+--function Person:PsoitonOnGround(pos)
+--    if not pos then
+--        return vectorZero
+--    end
+--    -- pos.y = 0
+--    return pos
+--end
+--
+--function Person:Init(rootGo, prefab, position, tragetPosition, personID)
+--    self.m_rootGo = rootGo
+--    self.m_prefab = prefab
+--    self.m_initPosition = self:PsoitonOnGround(position)
+--    self.m_targetPosition = self:PsoitonOnGround(tragetPosition)
+--    self:getSuper(Person).Init(self, personID)
+--    self:SetState(self.StateLoading)
+--
+--end
+--
+--function Person:Update(dt)
+--    self:getSuper(Person).Update(self, dt)
+--end
+--
+--function Person:Exit()
+--    self:getSuper(Person).Exit(self)
+--    self:RemoveFloatUIView()
+--end
+--
+--function Person:Event(msg, params)
+--    self:getSuper(Person).Event(self, msg, params)
+--end
+--
+--function Person:InitFloatUIView(type)
+--    FloatUI:SetObjectCrossCamera(self, function(view)
+--        if view then
+--            view:Invoke("ShowEventBumble", type)
+--        end
+--    end)
+--end
+--
+--function Person:InitChatUIView(conditionId)
+--    FloatUI:SetObjectCrossCamera(self, function(view)
+--        if view then
+--            view:Invoke("showChatEvent", conditionId)
+--        end
+--    end)
+--end
+--
+--function Person:RemoveFloatUIView()
+--    self.m_view = nil
+--    FloatUI:RemoveObjectCrossCamera(self)
+--end
+--
+--function Person:GetQueueId()
+--    if self.m_queueFront == self then
+--        self.m_queueFront = nil
+--        return 1
+--    end
+--    return self.m_queueFront and self.m_queueFront:GetQueueId() + 1 or 1
+--end
+--
+--function Person:SetPropertyLevelLocalData(data)
+--    self.m_propertyLocalData = data
+--end
+--
+--function Person:CheckDestinationInSameLevel(destination)
+--    if not destination then
+--        return false
+--    end
+--    return math.abs(self.m_go.transform.position.y - destination.y) < 5
+--end
+--
+--function Person:CheckDestinationOutBuilding(bounds, destination)
+--    if not destination or not bounds then
+--        return false
+--    end
+--    if destination.x < bounds.min.x or destination.x > bounds.max.x  or destination.z < bounds.min.z or destination.z > bounds.max.z then
+--        return true
+--    end
+--    return false
+--end
+--
+--function Person:InitStates()
+--    -- loaidng
+--    local StateLoading = self:InitState(STATE_LOADING)
+--    function StateLoading:Enter(person)
+--        person:CreateGo()
+--    end
+--
+--    function StateLoading:Update(person, dt)
+--    end
+--
+--    function StateLoading:Exit(person)
+--    end
+--
+--    function StateLoading:Event(person, msg)
+--        if msg == Person.LOADING_COMPLETE then
+--            person.m_go.transform.position = person.m_initPosition
+--            self:SetDoorTrigger(person)
+--            self:SetFloorAreaTrigger(person)
+--            self:SetPortalTrigger(person)
+--            Interactions:RegisterPersonTrigger(person)
+--        end
+--    end
+--
+--    function StateLoading:SetDoorTrigger(person)
+--        local colliderResp = person:GetColliderResponse()
+--        local animName = {"DoorOpenAnim", "ToiletDoor_open"}
+--        local animIndex = 1
+--        local enterFunc = function(responseGo, activatorGo, outRoom)
+--            local coll = responseGo:GetComponent("ColliderResponse")
+--            local anim = coll:GetDoorAnim()
+--            if not anim or coll:GetTriggerCount() > 1 then
+--                return
+--            end
+--
+--            local lastAni = 1
+--            local currAni = AnimationUtil.GetAnimationState(anim, animName[lastAni])
+--            if not currAni then
+--                lastAni = 2
+--                currAni = AnimationUtil.GetAnimationState(anim, animName[lastAni])
+--            end
+--            local needAni = outRoom == true and "_revert" or ""
+--
+--            if anim.isPlaying then
+--                return
+--            end
+--
+--            AnimationUtil.Play(anim, animName[lastAni] .. needAni, function()
+--                AnimationUtil.GotoAndStop(anim, animName[lastAni] .. needAni, "KEY_FRAME_CLOSE_POINT")--放完停在末尾,让isPlay为true
+--            end)
+--
+--            FloorMode:MakeDoorTimer(responseGo, function()--几秒后没人自动关闭
+--                if coll and not CS.UnityEngine.Object.ReferenceEquals( coll, nil ) and coll:GetTriggerCount() == 0 and anim then
+--                    AnimationUtil.Play(anim, animName[lastAni] .. needAni, nil, -1, "KEY_FRAME_SECOND")
+--                    return true
+--                elseif not anim then
+--                    return 1--切换场景的时候没了...或者其他原因导致的错误
+--                end
+--
+--                return false
+--            end)
+--        end
+--        -- local exitFunc = function(responseGo, activatorGo)
+--
+--        -- end
+--
+--        colliderResp:SetActivatorTriggerEventOnEnter(colliderResp.TYPE_OPEN_DOOR, person.m_go, enterFunc)
+--        --colliderResp:SetActivatorTriggerEventOnExit(colliderResp.TYPE_OPEN_DOOR, person.m_go, exitFunc)
+--    end
+--
+--    function StateLoading:SetPortalTrigger(person)
+--        local colliderResp = person:GetColliderResponse()
+--        local exitFunc = function(responseGo, activatorGo)
+--            if person.m_transfer then
+--                person.m_transfer = nil
+--                return
+--            end
+--
+--            local coll = responseGo:GetComponent("ColliderResponse")
+--            if coll.m_floors then--电梯之间传送
+--                local path = person.m_aiPath
+--                if not path or person:CheckDestinationInSameLevel(path.destination) then
+--                    return
+--                end
+--
+--                local goalPos = path.destination.y
+--                local goalFloor = 0
+--                local mixDis = 99
+--
+--                for i = 0, coll.m_floors.Length - 1 do
+--                    local v = coll.m_floors[i]
+--                    local dis = math.abs(goalPos - v.transform.position.y)
+--                    if dis < mixDis then
+--                        mixDis = dis
+--                        goalFloor = i
+--                    end
+--                end
+--
+--                local pos = coll.m_floors[goalFloor].transform.position
+--                activatorGo.transform.position = pos
+--                path:SearchPath()
+--                local nextPos = coll.m_floors[goalFloor]:GetComponent("ColliderResponse")
+--                if nextPos then
+--                    person.m_transfer = responseGo
+--                end
+--            end
+--        end
+--        local enterFunc = function(responseGo, activatorGo)--门 人
+--            local path = person.m_aiPath
+--            if not path then
+--                return
+--            end
+--
+--            local cfg = FloorMode:GetCurrFloorConfig()
+--            if not person:CheckDestinationInSameLevel(path.destination) and cfg.floor_count > 1 then
+--                UnityHelper.AddChildToParent(FloorMode:GetScene().m_personRoot[1].transform, activatorGo.transform, true)
+--                UnityHelper.IgnoreRenderer(activatorGo, true)
+--            end
+--        end
+--        colliderResp:SetActivatorTriggerEventOnEnter(colliderResp.TYPE_PORTAL, person.m_go, enterFunc)
+--        colliderResp:SetActivatorTriggerEventOnExit(colliderResp.TYPE_PORTAL, person.m_go, exitFunc)
+--    end
+--
+--    function StateLoading:SetFloorAreaTrigger(person)
+--        local cfg = FloorMode:GetCurrFloorConfig()
+--        if cfg.floor_count <= 1 then
+--            return
+--        end
+--
+--        local colliderResp = person:GetColliderResponse()
+--        local exitFunc = function(responseGo, activatorGo)
+--            local box = responseGo:GetComponent("BoxCollider")
+--            local path = person.m_aiPath
+--            if not path or not box then
+--                return
+--            end
+--            if not path or person:CheckDestinationOutBuilding(box.bounds, path.destination) then
+--                UnityHelper.AddChildToParent(FloorMode:GetScene().m_personRoot[1].transform, activatorGo.transform, true)
+--                UnityHelper.IgnoreRenderer(activatorGo, false)
+--            end
+--        end
+--        local enterFunc = function(responseGo, activatorGo)
+--            UnityHelper.AddChildToParent(FloorMode:GetScene():GetTrans(responseGo, "NPC"), activatorGo.transform, true)
+--            UnityHelper.IgnoreRendererByObject(FloorMode:GetScene():GetGo(responseGo, "Ground"), activatorGo)
+--            person:SetFloorHideFlag(FloorMode:GetScene():GetGo(responseGo, "Ground"))
+--        end
+--        colliderResp:SetActivatorTriggerEventOnEnter(colliderResp.TYPE_FLOOR_AREA, person.m_go, enterFunc)
+--        colliderResp:SetActivatorTriggerEventOnExit(colliderResp.TYPE_FLOOR_AREA, person.m_go, exitFunc)
+--    end
+--
+--    -- idle
+--    local StateIdle = self:InitState(STATE_IDLE)
+--    function StateIdle:Enter(person)
+--        local action = PERSON_ACTION.IDLE
+--        local keyFrames = {{}}
+--        keyFrames[1].key = "ANIM_IDLE_END"
+--        keyFrames[1].func = function() person:Event(person.EVENT_IDLE_END) end
+--        self:SetAnimator(action, keyFrames)
+--    end
+--
+--    function StateIdle:Update(person, dt)
+--    end
+--
+--    function StateIdle:Exit(person)
+--    end
+--
+--    function StateIdle:Event(person, msg)
+--        if msg == person.EVENT_IDLE_END then
+--        end
+--    end
+--
+--    -- walk
+--    local StateWalk = self:InitState(STATE_WALK)
+--    function StateWalk:Enter(person, params)
+--        if not self.m_stateParams then
+--            error(debug.traceback("the params of target is nil"))
+--        end
+--        self.m_anims = {
+--            [CfgMgr.config_global.character_walk_v] = PERSON_ACTION.WALK,
+--            [CfgMgr.config_global.Batman_walkspeed] = PERSON_ACTION.WALK,
+--            [CfgMgr.config_global.character_run_v] = PERSON_ACTION.RUN,
+--        }
+--        self.m_finalTragetPosition = person:PsoitonOnGround(self.m_stateParams.tragetPosition)
+--        self.m_speed = Tools:GetCheat(self.m_stateParams.speed or CfgMgr.config_global.character_walk_v, CfgMgr.config_global.character_walk_v)
+--        self.m_targets = {}
+--        self.m_currentTarget = nil
+--        self:CalculatePath(person)
+--    end
+--
+--    function StateWalk:Update(person, dt)
+--        if self.WalkingRotationUpdate then
+--            self:WalkingRotationUpdate()
+--        end
+--    end
+--
+--    function StateWalk:Exit(person)
+--        self.m_stateParams = nil
+--        person:RemoveFlag(person.FLAG_WALKING)
+--    end
+--
+--    function StateWalk:Event(person, msg)
+--        if msg == person.EVENT_WALK_END then
+--            self:Face2Target(person)
+--        elseif msg == person.EVENT_TURN_END then
+--            self:Walking(person)
+--        -- elseif msg == person.EVENT_WALK_CALC_PATH then
+--        --     self:Face2Target(person)
+--        elseif msg == person.EVENT_ARRIVE_FINAL_TARGET then
+--        end
+--    end
+--
+--    function StateWalk:CalculatePath(person)
+--        ----回调
+--        if person.m_go.transform.position == self.m_finalTragetPosition then
+--            self:Face2Target(person, 0)
+--            return
+--        end
+--
+--        local path = person.m_aiPath
+--
+--        if path and path:IsNull() then
+--            --删掉了GameObject,但是复用了Person
+--            if person.m_go:IsNull() then
+--                --printf("path is null and gameObject is null but enter stateWalk");
+--                return
+--            else
+--                --printf("path is null but enter stateWalk");
+--                --CS.UnityEngine.Debug.LogWarning("path is null but enter stateWalk",person.m_go);
+--                path = nil
+--            end
+--        end
+--
+--        if not path then
+--            path = UnityHelper.AddAStartComp(person.m_go)
+--            person.m_aiPath = path
+--        end
+--
+--        path.m_targetReachedAction = function()
+--			if path == nil or path:IsNull() or path.remainingDistance > path.endReachedDistance then
+--                return
+--            end
+--
+--            path.m_targetReachedAction = nil
+--            path.canMove = false
+--            self:Face2Target(person)
+--        end
+--        path.destination =  self.m_finalTragetPosition
+--        path.canMove = true
+--        path.maxSpeed = self.m_speed + Random.Range(-1.1, 1.1)
+--        path.pickNextWaypointDist = Random.Range(1.1, 4.1)
+--        path:SearchPath()
+--
+--        if self.m_anims[self.m_speed] then
+--            self:SetAnimator(self.m_anims[self.m_speed])
+--        else
+--            self:SetAnimator(PERSON_ACTION.WALK)
+--        end
+--    end
+--
+--    function StateWalk:Walking(person)
+--        -- self:SetAnimator(self.m_anims[self.m_speed]) --PERSON_ACTION.WALK
+--        -- local dis = self.m_currentTarget - person.m_go.transform.position
+--        -- local time = dis.magnitude / self.m_speed
+--        DotweenUtil.DOTweenPath(person.m_go, self.m_targetsV:ToArray(), self.m_speed, function()
+--            self:Face2Target(person)
+--        end)
+--    end
+--
+--    function StateWalk:Face2Target(person, speed)
+--        if self.m_stateParams and self.m_stateParams.finalRotaionPosition then
+--            person:AddFlag(Actor.FLAG_EMPLOYEE_ON_TURNBACK)
+--            local transformF = person.m_go.transform
+--            local targetDir = self.m_stateParams.finalRotaionPosition - transformF.position
+--            local cmd = "FACE_2_TARGET_END_" ..person.m_go:GetInstanceID()
+--            EventManager:RegEvent(cmd, function(go)
+--                EventManager:RegEvent(cmd, nil)
+--                person:RemoveFlag(Actor.FLAG_EMPLOYEE_ON_TURNBACK)
+--                person:Event(person.EVENT_ARRIVE_FINAL_TARGET)
+--            end)
+--            DotweenUtil.DOTweenRotate(person.m_go, targetDir, speed or 0.5, cmd)
+--        else
+--            person:Event(person.EVENT_ARRIVE_FINAL_TARGET)
+--        end
+--    end
+--
+--    --sitting
+--    local StateSitting = self:InitState(STATE_SITTING)
+--    function StateSitting:Enter(person)
+--        local action = PERSON_ACTION.IDLE2SIT
+--        local keyFrames = {{}}
+--        keyFrames[1].key = "ANIM_IDLE2SIT_END"
+--        keyFrames[1].func = function() person:Event(person.EVENT_IDLE2SIT_END) end
+--        self:SetAnimator(action, keyFrames)
+--    end
+--
+--    function StateSitting:Update(person, dt)
+--    end
+--
+--    function StateSitting:Exit(person)
+--    end
+--
+--    function StateSitting:Event(person, msg)
+--        if msg == person.EVENT_IDLE2SIT_END then
+--            person:SetState(person.StateWork)
+--        end
+--    end
+--
+--    --work
+--    local StateWork = self:InitState(STATE_WORK)
+--    function StateWork:Enter(person)
+--        local action = PERSON_ACTION.WORK
+--        -- local keyFrames = {{}}
+--        -- keyFrames[1].key = "ANIM_WORK_END"
+--        -- keyFrames[1].func = function() person:Event(person.EVENT_WORK_END) end
+--        self:SetAnimator(action)
+--    end
+--
+--    function StateWork:Update(person, dt)
+--    end
+--
+--    function StateWork:Exit(person)
+--    end
+--
+--    function StateWork:Event(person, msg)
+--        -- if msg == person.EVENT_WORK_END then
+--        --     person:SetState(person.StateStandup)
+--        -- end
+--    end
+--
+--    --StateStandup
+--    local StateStandup = self:InitState(STATE_STANDUP)
+--    function StateStandup:Enter(person)
+--        local action = PERSON_ACTION.SIT2IDLE
+--        local keyFrames = {{}}
+--        keyFrames[1].key = "ANIM_SIT2IDLE_END"
+--        keyFrames[1].func = function() person:Event(person.EVENT_SIT2IDLE_END) end
+--        self:SetAnimator(action, keyFrames)
+--    end
+--
+--    function StateStandup:Update(person, dt)
+--    end
+--
+--    function StateStandup:Exit(person)
+--    end
+--
+--    function StateStandup:Event(person, msg)
+--    end
+--
+--    --StateToilet
+--    local StateToilet = self:InitState(STATE_TOILET)
+--    function StateToilet:Enter(person)
+--        person:RemoveFlag(person.FLAG_EMPLOYEE_IN_QUEUE)
+--        local randomAnim = person.m_randomAnim or {}
+--        self:SetAnimator(randomAnim.anim or 1)
+--        self.timePoint = TimeManager:GetSocketTime() + randomAnim.countdown
+--    end
+--    function StateToilet:Update(person, dt)
+--        if TimeManager:GetSocketTime() > self.timePoint then
+--            local randomAnim = person.m_randomAnim or {}
+--            local params = {tragetPosition = person.m_targetPosition, finalRotaionPosition = person.m_targetRotaion}
+--            person:SetState(randomAnim.setting and person.StateStandup or person.StateWalk, params)
+--        end
+--    end
+--    function StateToilet:Exit(person)
+--        local interactions = person:GetCurrentInteractionEntity()
+--        if interactions then
+--            person.m_triggerCounter[interactions.m_tag] = math.random(interactions.m_colliderComponent.m_behaviourReset.x, interactions.m_colliderComponent.m_behaviourReset.y)
+--            interactions:Event(interactions.EVENT_PERSON_OUT, {person})
+--            if person:HasFlag(person.FLAG_EMPLOYEE_ON_MEETING) then
+--                if MeetingEventManager:CheckRoomDailyMeetingComplete(interactions.m_roomIndex) then
+--                    interactions.m_roomIndex = nil
+--                end
+--            end
+--        end
+--        person:RemoveFlag(person.FLAG_EMPLOYEE_ON_ACTION)
+--        person:AddFlag(person.FLAG_BACK_TO_WORK)
+--    end
+--    function StateToilet:Event(person, msg)
+--    end
+--
+--    --
+--    local StateInBus = self:InitState(STATE_IN_BUS)
+--    function StateInBus:Enter(person)
+--        if person:HasFlag(person.FLAG_EMPLOYEE_OFF_WORKING) then
+--            person.m_go:SetActive(false)
+--            person:RemoveFlag(person.FLAG_EMPLOYEE_ON_WORKING)
+--        else
+--            person:SetState(person.StateWalk, {tragetPosition = person.m_targetPosition, finalRotaionPosition = person.m_targetRotaion, speed = CfgMgr.config_global.character_run_v})
+--        end
+--    end
+--    function StateInBus:Update(person, dt)
+--
+--    end
+--    function StateInBus:Exit(person)
+--        person.m_busPosition = nil
+--        person.m_go:SetActive(true)
+--    end
+--    function StateInBus:Event(person, msg, params)
+--        if msg == person.EVENT_GETOFF_BUS then
+--            person.m_go.transform.position = params
+--            person:SetState(person.StateWalk, {tragetPosition = person.m_targetPosition, finalRotaionPosition = person.m_targetRotaion, speed = CfgMgr.config_global.character_run_v})
+--        end
+--    end
+--
+--    --
+--    local StateQueueUp = self:InitState(STATE_QUEUE_UP)
+--    function StateQueueUp:Enter(person)
+--        self:SetAnimator(math.random(PERSON_ACTION.REST1, PERSON_ACTION.REST4))
+--        if not person:HasFlag(person.FLAG_EMPLOYEE_IN_QUEUE) then
+--            local interactions = person:GetCurrentInteractionEntity()
+--            if interactions then
+--                interactions:Event(interactions.EVENT_PERSON_IN, {person, 0})
+--            else
+--                local params = {tragetPosition = person.m_targetPosition, finalRotaionPosition = person.m_targetRotaion}
+--                person:SetState(person.StateWalk, params)
+--            end
+--        end
+--    end
+--    function StateQueueUp:Update(person, dt)
+--
+--    end
+--    function StateQueueUp:Exit(person)
+--    end
+--    function StateQueueUp:Event(person, msg, params)
+--        if msg == person.EVENT_GETIN_IDLE_POSTION then
+--            person:SetState(person.StateWalk, {tragetPosition = params.pos, finalRotaionPosition = params.dir})
+--        end
+--    end
+--
+--    --
+--    local StateService = self:InitState(STATE_SERVICE)
+--    function StateService:Enter(person)
+--        self:SetAnimator(PERSON_ACTION.REPAIR)
+--
+--        local bonus = {}
+--        local id, level  = person.m_propertyLocalData.id, person.m_propertyLocalData.level
+--        person:SetPersonBonuses(bonus, {"time"}, person.m_propertyLocalData)
+--        self.timeCount = bonus.time or 0  --(CfgMgr.config_furnitures_levels[id][level].time or 1) * (1 - (bonus.time or 0))
+--        self.timePoint = TimeManager:GetSocketTime() + self.timeCount
+--        FloatUI:SetObjectCrossCamera(person, function(view)
+--            person.m_view = view
+--        end, function()
+--            person.m_view = nil
+--        end, 0)
+--    end
+--    function StateService:Update(person, dt)
+--        local t = TimeManager:GetSocketTime()
+--        if t > self.timePoint then
+--            person:SetState(person.StateWalk, {tragetPosition = person.m_targetPosition, finalRotaionPosition = person.m_targetRotaion})
+--            return
+--        end
+--
+--        if t - (self.lastUpdateTime or 0) < 0.5 then
+--            return
+--        end
+--        self.lastUpdateTime = t
+--        if person.m_view then
+--            local percentage = (self.timePoint - t) / self.timeCount * 100
+--            person.m_view:Invoke("ShowPropertyWorking", percentage)
+--        end
+--    end
+--    function StateService:Exit(person)
+--        person:RemoveFloatUIView()
+--        person:RoomServiceComplete(person)
+--        person:RemoveFlag(person.FLAG_EMPLOYEE_PROPERTY_ON_WORKING)
+--        FloorMode:GetScene():GetGo(person.m_go, "WorkState"):SetActive(false)
+--    end
+--    function StateService:Event(person, msg, params)
+--    end
+--
+--    --2023-4-14添加副本就餐
+--    local StateInstanceEating = self:InitState(STATE_INSTANCE_EATING)
+--    function StateInstanceEating:Enter(person)
+--
+--    end
+--
+--    function StateInstanceEating:Update(person, dt)
+--        if person:HasFlag(person.FLAG_INSTANCEWORKER_ON_WORKING) then
+--
+--            return
+--        end
+--        if person:HasFlag(person.FLAG_INSTANCEWORKER_ON_SLEEPING) then
+--
+--        end
+--    end
+--
+--    function StateInstanceEating:Exit(person)
+--
+--    end
+--
+--    function StateInstanceEating:Event(person, msg)
+--    end
+--
+--    --2023-4-14添加副本就寝
+--    local StateInstanceSleeping = self:InitState(STATE_INSTANCE_SLEEPING)
+--    function StateInstanceSleeping:Enter(person)
+--
+--    end
+--
+--    function StateInstanceSleeping:Update(person, dt)
+--        if person:HasFlag(person.FLAG_INSTANCEWORKER_ON_WORKING) then
+--
+--            return
+--        end
+--        if person:HasFlag(person.FLAG_INSTANCEWORKER_ON_SLEEPING) then
+--
+--        end
+--    end
+--
+--    function StateInstanceSleeping:Exit(person)
+--
+--    end
+--
+--    function StateInstanceSleeping:Event(person, msg)
+--    end
+--    --2023-9-12 添加副本时间NPC返回
+--    local StateInstanceEventWalkBack = self:InitState(STATE_INSTANCE_EVENT_WALK_BACK)
+--    function StateInstanceEventWalkBack:Enter(person, params) end
+--    function StateInstanceEventWalkBack:Update(person, dt) end
+--    function StateInstanceEventWalkBack:Exit(person) end
+--
+--end
+--
+--
+--return Person

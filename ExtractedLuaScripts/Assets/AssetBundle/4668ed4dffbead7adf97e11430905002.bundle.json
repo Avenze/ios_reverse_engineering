@@ -1,0 +1,83 @@
+{
+	"m_AssetBundleName": "4668ed4dffbead7adf97e11430905002.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/PersonalDev/UI/PersonalAffairUI.txt": {
+			"m_Asset": { "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": -7961302784380345614 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/PersonalDev/UI/PersonalAffairUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": -4439580271516602490 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/PersonalDev/UI/PersonalInfoUI.txt": {
+			"m_Asset": { "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": -1758881995950939957 },
+			"m_PreloadIndex": 8,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/PersonalDev/UI/PersonalInfoUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": -2046159148581811059 },
+			"m_PreloadIndex": 5,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/PersonalDev/UI/PersonalLvlUpUI.txt": {
+			"m_Asset": { "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": 167909762510742465 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/PersonalDev/UI/PersonalLvlUpUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": 1544147829022642558 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/PersonalDev/UI/PersonalPromoteResultUI.txt": {
+			"m_Asset": { "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": -8766685809017278949 },
+			"m_PreloadIndex": 4,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/PersonalDev/UI/PersonalPromoteResultUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": -5266226647926562155 },
+			"m_PreloadIndex": 7,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/PersonalDev/UI/PersonalPromoteUI.txt": {
+			"m_Asset": { "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": 1449610467834592414 },
+			"m_PreloadIndex": 6,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/PersonalDev/UI/PersonalPromoteUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": 9109099451288664346 },
+			"m_PreloadIndex": 9,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "4668ed4dffbead7adf97e11430905002.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": -4439580271516602490 },
+		{ "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": 167909762510742465 },
+		{ "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": 1544147829022642558 },
+		{ "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": -7961302784380345614 },
+		{ "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": -8766685809017278949 },
+		{ "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": -2046159148581811059 },
+		{ "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": 1449610467834592414 },
+		{ "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": -5266226647926562155 },
+		{ "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": -1758881995950939957 },
+		{ "m_Collection": "cab-52d6a40860e9fa24d69507724c1ea5fe", "m_PathID": 9109099451288664346 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

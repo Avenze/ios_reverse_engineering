@@ -1,0 +1,29 @@
+{
+	"m_AssetBundleName": "e7df94b4a4f2348afc4ac1ba48523a9d.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/Factory/FactoryMode.txt": {
+			"m_Asset": { "m_Collection": "cab-5f82d47ff26a2791b55a6a96a06a1425", "m_PathID": -162947149245664784 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-5f82d47ff26a2791b55a6a96a06a1425", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-5f82d47ff26a2791b55a6a96a06a1425", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "e7df94b4a4f2348afc4ac1ba48523a9d.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-5f82d47ff26a2791b55a6a96a06a1425", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-5f82d47ff26a2791b55a6a96a06a1425", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-5f82d47ff26a2791b55a6a96a06a1425", "m_PathID": -162947149245664784 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

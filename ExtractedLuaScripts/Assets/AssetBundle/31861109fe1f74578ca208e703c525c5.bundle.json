@@ -1,0 +1,35 @@
+{
+	"m_AssetBundleName": "31861109fe1f74578ca208e703c525c5.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/CycleInstance/NightClub/AI/CycleNightClubAIBlackBoard.txt": {
+			"m_Asset": { "m_Collection": "cab-ddfdb76898785ba011838f7bc9351ecd", "m_PathID": 2786991536174065496 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/NightClub/AI/CycleNightClubClient.txt": {
+			"m_Asset": { "m_Collection": "cab-ddfdb76898785ba011838f7bc9351ecd", "m_PathID": -409867486804583379 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-ddfdb76898785ba011838f7bc9351ecd", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-ddfdb76898785ba011838f7bc9351ecd", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "31861109fe1f74578ca208e703c525c5.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-ddfdb76898785ba011838f7bc9351ecd", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-ddfdb76898785ba011838f7bc9351ecd", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-ddfdb76898785ba011838f7bc9351ecd", "m_PathID": -409867486804583379 },
+		{ "m_Collection": "cab-ddfdb76898785ba011838f7bc9351ecd", "m_PathID": 2786991536174065496 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

@@ -1,0 +1,34 @@
+{
+	"m_CompileInfo": {
+		"m_HasFixedFunctionShaders": false,
+		"m_HasSurfaceShaders": false,
+		"m_MeshComponentsFromSnippets": 0,
+		"m_Snippets": []
+	},
+	"m_CompileSmokeTestAfterImport": false,
+	"m_CompressedBlob": "",
+	"m_CompressedLengths": [],
+	"m_CorrespondingSourceObject": { "m_Collection": "unity_builtin_extra", "m_PathID": 0 },
+	"m_DecompressedLengths": [],
+	"m_DefaultTextures": {},
+	"m_Dependencies": [],
+	"m_HideFlags": 0,
+	"m_Name": "Hidden/Internal-DeferredReflections",
+	"m_NonModifiableTextures": {},
+	"m_Offsets": [],
+	"m_ParsedForm": {
+		"m_CustomEditorName": "",
+		"m_Dependencies": [],
+		"m_DisableNoSubshadersMessage": false,
+		"m_FallbackName": "",
+		"m_Name": "",
+		"m_PropInfo": {
+			"m_Props": []
+		},
+		"m_SubShaders": []
+	},
+	"m_Platforms": [],
+	"m_PrefabAsset": { "m_Collection": "unity_builtin_extra", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "unity_builtin_extra", "m_PathID": 0 },
+	"m_ShaderIsBaked": false
+}

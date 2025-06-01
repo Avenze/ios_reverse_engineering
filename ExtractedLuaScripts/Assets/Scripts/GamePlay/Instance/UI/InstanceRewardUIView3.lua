@@ -1,0 +1,378 @@
+--[[
+    luaide  模板位置位于 Template/FunTemplate/NewFileTemplate.lua 其中 Template 为配置路径 与luaide.luaTemplatesDir
+    luaide.luaTemplatesDir 配置 https://www.showdoc.cc/web/#/luaide?page_id=713062580213505
+    author:{author}
+    time:2023-03-22 10:39:57
+]]
+
+local Class = require("Framework.Lua.Class")
+local UIView = require("Framework.UI.View")
+local EventManager = require("Framework.Event.Manager")
+local ViewUtils = require("GamePlay.Utils.ViewUtils")
+local GameResMgr = require("GameUtils.GameResManager")
+
+local FileHelper = CS.Common.Utils.FileHelper
+local AnimationUtil = CS.Common.Utils.AnimationUtil
+local UnityHelper = CS.Common.Utils.UnityHelper
+local Color = CS.UnityEngine.Color
+local FeelUtil = CS.Common.Utils.FeelUtil
+local InstanceDataManager = GameTableDefine.InstanceDataManager
+local ConfigMgr = GameTableDefine.ConfigMgr
+local CityMode = GameTableDefine.CityMode
+local UI = GameTableDefine.InstanceRewardUI3
+local ResourceManger = GameTableDefine.ResourceManger
+
+local InstanceRewardUIView3 = Class("InstanceRewardUIView3", UIView)
+
+
+function InstanceRewardUIView3:ctor()
+    self.super:ctor()
+    self.m_uiModel = UI:GetUIModel()
+
+    self.m_level = nil -- 当前操作的彩蛋等级
+    self.m_index = nil -- 当前等级操作的彩蛋索引
+    self.m_eggsGO = nil -- 彩蛋节点
+    self.m_playable = nil -- 每个彩蛋上的timeline的playable组件
+    self.m_openingBtn = nil -- 点击按钮
+    self.m_tipGO = nil -- 点击提示节点
+    self.m_rewardGO = nil -- 弹出奖励节点
+    self.m_rewardFeel = nil
+    self.m_frame1 = nil -- 事件1节点
+    self.m_RewardDataList = {{}, {}}
+end
+
+function InstanceRewardUIView3:OnEnter()
+    --print("================11111111111111")
+    --埋点:查看副本详情
+    local buildingID = CityMode:GetCurrentBuilding()
+    GameSDKs:TrackForeign("rank_activity", {name = "LimitInstance", operation = "1", score_new = tonumber(InstanceDataManager:GetCurInstanceKSLevel()) or 0, scene_id = buildingID})
+
+    self:InitView()
+    self:ShowAchievements()
+end
+
+function InstanceRewardUIView3:InitView()
+    --local dbg = require('emmy_core')
+    --dbg.breakHere()
+
+    local count = #self.m_uiModel.rewardTypeConfig
+    self.m_eggsGO = {}
+    self.m_playable = {}
+    for i=1,count do
+        self.m_eggsGO[i] = self:GetGo("background/MediumPanel/chestPivot/chest/"..tostring(i))
+        self.m_playable[i] = self:GetComp(self.m_eggsGO[i],"","PlayableDirector")
+    end
+    self.m_level = #self.m_uiModel.eggs
+    self.m_index = self.m_uiModel.eggs[self.m_level]
+    self.m_openingBtn = self:GetComp("background/MediumPanel/opening","Button")
+    self.m_tipGO = self:GetGo("background/BottomPanel/tipText")
+    self.m_rewardGO = self:GetGo("background/MediumPanel/reward")
+    self.m_rewardFeel = self:GetComp(self.m_rewardGO,"openFB","MMFeedbacks")
+    self.m_openingBtn.interactable = false
+
+    local reallyRewards = InstanceDataManager:GetCurAllRewardData()
+    if not reallyRewards or Tools:GetTableSize(reallyRewards) <= 0 then
+        GameTableDefine.InstanceRewardUI:CloseView()
+        return
+    end
+    for i = 1, Tools:GetTableSize(reallyRewards) do 
+        table.insert(self.m_RewardDataList, i + 1, reallyRewards[i])
+    end
+
+    -- 点击开蛋事件:
+    EventManager:RegEvent("EVENT_OPEN_EGG", function(go)
+        self.m_playable[self.m_level]:Pause()
+        self.m_frame1 = self.m_playable[self.m_level].time
+        self.m_tipGO:SetActive(true)
+        self.m_openingBtn.interactable = true
+
+        self:SetButtonClickHandler(self.m_openingBtn,function()
+            local curEgg = self:OpenAEgg(true)
+            if curEgg~= nil then -- 显示下一个同级奖励
+                if self.m_index >= 1 then
+                    self.m_openingBtn.interactable = false
+                    self.m_tipGO:SetActive(false)
+                    self.m_playable[self.m_level]:Resume()
+                    self.m_rewardGO:SetActive(true) -- 第一次动画自动播放
+                    --设置奖励信息
+                    self:SetRewardInfo()
+
+                else -- 显示下一级奖励
+                    self:OpenAEgg()
+                    self:ShowAchievements()
+                end
+            else  -- 显示全部奖励
+                self.m_rewardGO:SetActive(false)
+                self:OpenAllRewardList()
+            end
+
+        end)
+    end)
+    -- 继续开蛋事件
+    EventManager:RegEvent("EVENT_CONTINUE_OPEN_EGG", function(go)
+        self.m_playable[self.m_level]:Pause()
+        self.m_tipGO:SetActive(true)
+        self.m_openingBtn.interactable = true
+
+        self:SetButtonClickHandler(self.m_openingBtn, function()
+            local curEgg = self:OpenAEgg(true)
+            if curEgg~= nil then
+                if self.m_index >= 1 then -- 显示下一个同级奖励
+                    self.m_openingBtn.interactable = false
+                    self.m_tipGO:SetActive(false)
+                    self.m_playable[self.m_level]:Play()
+                    self.m_playable[self.m_level].time = self.m_frame1
+    
+                    --设置奖励信息
+                    self:SetRewardInfo()
+                else -- 显示下一级奖励
+                    self:OpenAEgg()
+                    self:ShowAchievements()
+                end
+            else -- 显示全部奖励
+                self.m_rewardGO:SetActive(false)
+                self:OpenAllRewardList()
+            end
+
+        end)
+    end)
+
+    self:SetButtonClickHandler(self:GetComp("background/MediumPanel/bg","Button"), function()
+    end)
+
+    self:ShowAchievements()
+end
+
+function InstanceRewardUIView3:SetRewardInfo()
+    self.m_rewardFeel:PlayFeedbacks()
+
+    local rewardID = self.m_uiModel.reallyRewards[self.m_level].rewardList[self.m_index][1]
+    local rewardShopCfg = self.m_uiModel.shopConfig[rewardID]
+    if rewardShopCfg.type == 9 then
+        local resType = ResourceManger:GetShopCashType(rewardShopCfg.country)
+        local icon = ResourceManger:GetShopCashIcon(resType,rewardShopCfg.icon)
+        self:SetText(self.m_rewardGO,"icon/num","+"..rewardShopCfg.amount.."H")
+        self:SetSprite(self:GetComp(self.m_rewardGO,"icon","Image"),"UI_Shop",icon)
+    else
+        self:SetText(self.m_rewardGO,"icon/num","+"..rewardShopCfg.amount)
+        self:SetSprite(self:GetComp(self.m_rewardGO,"icon","Image"),"UI_Shop",rewardShopCfg.icon)
+    end
+    
+    self:OpenAEgg()
+    self:SetText(self.m_eggsGO[self.m_level],"num", "x"..self.m_index)
+end
+
+function InstanceRewardUIView3:ShowAchievements()
+    self.m_openingBtn.interactable = false
+    self.m_tipGO:SetActive(false)
+
+    self.m_playable[self.m_level].time = 0
+    local curEgg = self:OpenAEgg(true)
+    if curEgg == nil then   -- 没有新的蛋了, 展示所有得到的奖励
+    else -- 还有没开完的蛋, 继续开蛋
+        for i=1,#self.m_eggsGO do
+            self.m_eggsGO[i]:SetActive(i == self.m_level)
+        end
+        local go = self.m_eggsGO[self.m_level]
+        self:SetText(go,"num", "x"..self.m_index)
+    end
+    self.m_rewardGO:SetActive(false)
+
+end
+
+
+
+--[[
+    @desc: 所有蛋的开完显示所有奖励列表，并于一定时间后开启点关闭
+    author:{author}
+    time:2023-04-28 10:58:33
+    @return:
+]]
+function InstanceRewardUIView3:OpenAllRewardList()
+    
+    self:SetButtonClickHandler(self.m_openingBtn, function()
+        self:DestroyModeUIObject()
+    end)
+
+
+    self:SetText("background/HeadPanel/bg/title", GameTextLoader:ReadText("TXT_INSTANCE_TOTAL_REWARD"))
+    local allRewardData = {}
+    -- ["rewardList"] = {{1001,1002},{1001}},
+    for _, v in pairs(self.m_RewardDataList) do
+        if Tools:GetTableSize(v) > 0 then
+            for _, v1 in ipairs(v.rewardList) do
+                for _, v3 in ipairs(v1) do
+                    local shopCfg = ConfigMgr.config_shop[v3]
+                    if shopCfg then
+                        if not allRewardData[v3] then
+                            allRewardData[v3] = shopCfg.amount
+                        else
+                            allRewardData[v3]  = allRewardData[v3] + shopCfg.amount
+                        end
+                    end
+                end 
+            end
+        end
+    end
+    if Tools:GetTableSize(allRewardData) <= 0 then
+        UI:CloseView()
+        return
+    end
+    local itemGoList = {}
+    local goCounter = 1
+    local itemGO = self:GetGoOrNil("background/MediumPanel/list/item")
+    local parentGO = self:GetGoOrNil("background/MediumPanel/list")
+    --TODO：这里需要去重，用显示类型判断
+    --{shopID = amount, displayType = 0, icon = ""}
+    local newAllRewardData = {}
+    local haveTypes = {}
+    local haveTypeIndex = {}
+    local needConvertDiamondItems = {}
+    local diamondIndex = 0
+    local converNum = 0
+    local coinIndex = 0
+    local coinNum = 0
+    for shopID, v in pairs(allRewardData) do 
+        local shopCfg = ConfigMgr.config_shop[shopID]
+        if shopCfg then
+            if shopCfg.category_type > 0 then
+                local isHaveType = false
+                local haveIndex = 0
+                for index, haveType in ipairs(haveTypes) do
+                    if haveType == shopCfg.category_type then
+                        isHaveType = true
+                        haveIndex = index
+                        break
+                    end
+                end
+                if not isHaveType then
+                    local tmpData = {}
+                    tmpData.amount = v
+                    tmpData.icon = shopCfg.category_icon
+                    table.insert(newAllRewardData, tmpData)
+                    table.insert(haveTypes, shopCfg.category_type)
+                    table.insert(haveTypeIndex, Tools:GetTableSize(newAllRewardData))
+                    if shopCfg.category_type == 3 then
+                        diamondIndex = Tools:GetTableSize(newAllRewardData)
+                    end
+ 
+                else
+                    if haveIndex > 0 and haveTypeIndex[haveIndex] and newAllRewardData[haveTypeIndex[haveIndex]] then
+                        newAllRewardData[haveTypeIndex[haveIndex]].amount = newAllRewardData[haveTypeIndex[haveIndex]].amount + v
+                    end
+                end
+            else
+                if InstanceDataManager:IsConvertShopItem(shopID) then
+                    converNum  = converNum + InstanceDataManager:GetSameShopItemConverToDiamond(shopID)
+                else
+                    if shopCfg.type == 9 then -- 主场景货币特殊处理和批逻辑,不使用和批类型判断
+                        if coinIndex == 0 then
+                            local resType = ResourceManger:GetShopCashType(shopCfg.country)
+                            local icon = "icon_shop_cash_1"
+                            if resType == "euro" then
+                                icon = "icon_shop_cash_1_euro"
+                            end
+                            local tmpData = {}
+                            tmpData.amount = shopCfg.amount * v
+                            tmpData.icon = icon
+                            tmpData.shopCfg = shopCfg
+                            table.insert(newAllRewardData, tmpData)
+                            coinIndex = Tools:GetTableSize(newAllRewardData)
+                        else
+                            newAllRewardData[coinIndex].amount = newAllRewardData[coinIndex].amount + shopCfg.amount * v
+                        end
+                    else
+                        local tmpData = {}
+                        tmpData.amount = v
+                        tmpData.icon = shopCfg.icon
+                        table.insert(newAllRewardData, tmpData)
+                    end
+                end
+                
+            end
+        end
+    end
+    --对于转换给钻石的物品作为显示
+    if converNum > 0 then
+        if diamondIndex > 0 then
+            newAllRewardData[diamondIndex].amount = newAllRewardData[diamondIndex].amount + converNum
+        else
+            local tmpData = {}
+            tmpData.amount = converNum
+            tmpData.icon = "icon_shop_diamond_1"
+            table.insert(newAllRewardData, tmpData)
+        end
+    end
+    --if coinNum > 0 then
+    --    if coinIndex > 0 then
+    --        newAllRewardData[coinIndex].amount = newAllRewardData[coinIndex].amount + coinNum
+    --    else
+    --        local tmpData = {}
+    --        tmpData.amount = coinNum
+    --        -- 根据地区判断要显示的图标
+    --        tmpData.icon = "icon_shop_diamond_1"
+    --        table.insert(newAllRewardData, tmpData)
+    --        
+    --    end
+    --end
+    for k, v in ipairs(newAllRewardData) do
+        if goCounter == 1 then
+            self:SetSprite(self:GetComp(itemGO, "icon", "Image"), "UI_Shop", v.icon)
+            if v.shopCfg then
+                self:SetText(itemGO, "bg/num", "+"..tostring(Tools:SeparateNumberWithComma(v.amount)).."H")
+            else
+                self:SetText(itemGO, "bg/num", "+"..tostring(Tools:SeparateNumberWithComma(v.amount)))
+            end
+        else
+            local tempGo = UnityHelper.CopyGameByGo(itemGO, parentGO)
+            self:SetSprite(self:GetComp(tempGo, "icon", "Image"), "UI_Shop", v.icon)
+            if v.shopCfg then
+                self:SetText(tempGo, "bg/num", "+"..tostring(Tools:SeparateNumberWithComma(v.amount)).."H")
+            else
+                self:SetText(tempGo, "bg/num", "+"..tostring(Tools:SeparateNumberWithComma(v.amount)))
+            end
+        end
+        goCounter  = goCounter + 1
+    end
+    parentGO:SetActive(true)
+
+end
+
+
+
+--[[
+    @desc: 开蛋
+    author:{author}
+    time:2023-10-17 14:44:49
+    --@isPre: 是否预先获取将要开的蛋的信息
+    @return:
+]]
+function InstanceRewardUIView3:OpenAEgg(isPre)
+    local eggs = self.m_uiModel.eggs
+    local eggType = nil
+    if self.m_index >= 1 then
+        if not isPre then
+            self.m_index = self.m_index - 1
+        end
+        eggType = self.m_level
+    else
+        if eggs[self.m_level - 1] then
+            if not isPre then
+                self.m_level = self.m_level -1
+                self.m_index = eggs[self.m_level]
+            end
+            eggType = self.m_level
+        end
+    end
+    return eggType 
+end
+
+function InstanceRewardUIView3:OnExit()
+    if self.tiemr then
+        GameTimer:_RenewTimer(self.tiemr)
+    end
+
+	self.super:OnExit(self)
+end
+
+return InstanceRewardUIView3

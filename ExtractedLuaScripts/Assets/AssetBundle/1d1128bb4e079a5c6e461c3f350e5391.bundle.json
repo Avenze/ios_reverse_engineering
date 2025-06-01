@@ -1,0 +1,125 @@
+{
+	"m_AssetBundleName": "1d1128bb4e079a5c6e461c3f350e5391.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/Floors/Actors/Actor.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 1708881779352794901 },
+			"m_PreloadIndex": 11,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/Bus.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 7411883299501292432 },
+			"m_PreloadIndex": 9,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/ColliderResponse.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -5047067962612291268 },
+			"m_PreloadIndex": 7,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/CompanyEmployee.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -2228975107853472007 },
+			"m_PreloadIndex": 8,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/EventBatman.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -3674720224055934217 },
+			"m_PreloadIndex": 12,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/EventChatter.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -4946475903829465017 },
+			"m_PreloadIndex": 5,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/EventDiamonder.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 7006498351341784504 },
+			"m_PreloadIndex": 13,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/EventInstance.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -733278504445335994 },
+			"m_PreloadIndex": 15,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/EventSponsor.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -8979392292027969393 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/Interactions.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -1484419871626507081 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/Lounge.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -7926863916230296240 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/Meeting.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 2949583189066814106 },
+			"m_PreloadIndex": 4,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/Person.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 8532811930201506111 },
+			"m_PreloadIndex": 6,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/PetAI.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 7374466235838389250 },
+			"m_PreloadIndex": 14,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/SimpleMover.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 3287222394240963647 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/TestAcor.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -2474894922831767550 },
+			"m_PreloadIndex": 10,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/Actors/Toile.txt": {
+			"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -7018413125093312445 },
+			"m_PreloadIndex": 16,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "1d1128bb4e079a5c6e461c3f350e5391.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 3287222394240963647 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -1484419871626507081 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -8979392292027969393 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -7926863916230296240 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 2949583189066814106 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -4946475903829465017 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 8532811930201506111 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -5047067962612291268 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -2228975107853472007 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 7411883299501292432 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -2474894922831767550 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 1708881779352794901 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -3674720224055934217 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 7006498351341784504 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": 7374466235838389250 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -733278504445335994 },
+		{ "m_Collection": "cab-ab8910ce0646cf864afe7b824801f936", "m_PathID": -7018413125093312445 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

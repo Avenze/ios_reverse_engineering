@@ -1,0 +1,29 @@
+{
+	"m_AssetBundleName": "c72ad061e337accf5e54359786a89510.bundle",
+	"m_Container": {
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/SimpleMover/SimpleMoverSaunterState.txt": {
+			"m_Asset": { "m_Collection": "cab-4bd247c8ae6eef4da84514c18e61cbaa", "m_PathID": -6751570385679665747 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-4bd247c8ae6eef4da84514c18e61cbaa", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-4bd247c8ae6eef4da84514c18e61cbaa", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "c72ad061e337accf5e54359786a89510.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-4bd247c8ae6eef4da84514c18e61cbaa", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-4bd247c8ae6eef4da84514c18e61cbaa", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-4bd247c8ae6eef4da84514c18e61cbaa", "m_PathID": -6751570385679665747 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

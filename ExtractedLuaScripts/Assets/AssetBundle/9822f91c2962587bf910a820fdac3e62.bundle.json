@@ -1,0 +1,29 @@
+{
+	"m_AssetBundleName": "9822f91c2962587bf910a820fdac3e62.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/PersonalDev/PersonalDevModel.txt": {
+			"m_Asset": { "m_Collection": "cab-80b0f89ac0f0fc67c3a3fa9792b66bc9", "m_PathID": -8260358032432519487 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-80b0f89ac0f0fc67c3a3fa9792b66bc9", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-80b0f89ac0f0fc67c3a3fa9792b66bc9", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "9822f91c2962587bf910a820fdac3e62.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-80b0f89ac0f0fc67c3a3fa9792b66bc9", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-80b0f89ac0f0fc67c3a3fa9792b66bc9", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-80b0f89ac0f0fc67c3a3fa9792b66bc9", "m_PathID": -8260358032432519487 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

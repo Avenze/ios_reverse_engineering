@@ -1,0 +1,215 @@
+{
+	"m_AssetBundleName": "4191376578d24853e288915a987dd451.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleInstanceAdUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -3433953361558421679 },
+			"m_PreloadIndex": 15,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleInstanceAdUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 1581639103987610614 },
+			"m_PreloadIndex": 5,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleInstanceMilepostUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 6852369643424888457 },
+			"m_PreloadIndex": 25,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleInstanceMilepostUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -4495945907781216849 },
+			"m_PreloadIndex": 26,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleInstancePopUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -5230222716260323402 },
+			"m_PreloadIndex": 20,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleInstancePopUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -4449319377075631438 },
+			"m_PreloadIndex": 13,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleInstanceRewardUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 6979389481761624488 },
+			"m_PreloadIndex": 27,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleInstanceRewardUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -4489009224608732801 },
+			"m_PreloadIndex": 19,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleInstanceShopUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 8707014736865253556 },
+			"m_PreloadIndex": 8,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleInstanceShopUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 7266707799985424148 },
+			"m_PreloadIndex": 23,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleInstanceSkillUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -2352453601933179288 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleInstanceSkillUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 2372363512287074498 },
+			"m_PreloadIndex": 22,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandBuildingUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 6209372972977175067 },
+			"m_PreloadIndex": 14,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandBuildingUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -7590954819843937854 },
+			"m_PreloadIndex": 31,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandHeroUpgradeUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 4768099443022494947 },
+			"m_PreloadIndex": 16,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandHeroUpgradeUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 2212181306841200190 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandMainViewUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 1056355919302183643 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandMainViewUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 7536304465515658 },
+			"m_PreloadIndex": 30,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandOfflineRewardUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 2114300398333483091 },
+			"m_PreloadIndex": 17,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandOfflineRewardUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 3503158939081427591 },
+			"m_PreloadIndex": 6,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandSellUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -2711158084909620087 },
+			"m_PreloadIndex": 21,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandSellUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -6332721202846256612 },
+			"m_PreloadIndex": 24,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandTaskUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -2986231291291054988 },
+			"m_PreloadIndex": 11,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandTaskUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -1849751033804909518 },
+			"m_PreloadIndex": 4,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandTimeUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 8194699820449849659 },
+			"m_PreloadIndex": 12,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandTimeUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 5357849334416748623 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandUnlockUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -7102954216156715848 },
+			"m_PreloadIndex": 29,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandUnlockUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -839270833166007845 },
+			"m_PreloadIndex": 18,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandViewUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 6149574100932411552 },
+			"m_PreloadIndex": 28,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/CycleIslandViewUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -536860981795375951 },
+			"m_PreloadIndex": 9,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/SlotMachineUI.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 7885942291000139610 },
+			"m_PreloadIndex": 10,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Island/UI/SlotMachineUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 4249922560205423447 },
+			"m_PreloadIndex": 7,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "4191376578d24853e288915a987dd451.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 2212181306841200190 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 5357849334416748623 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 1056355919302183643 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -2352453601933179288 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -1849751033804909518 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 1581639103987610614 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 3503158939081427591 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 4249922560205423447 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 8707014736865253556 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -536860981795375951 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 7885942291000139610 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -2986231291291054988 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 8194699820449849659 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -4449319377075631438 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 6209372972977175067 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -3433953361558421679 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 4768099443022494947 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 2114300398333483091 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -839270833166007845 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -4489009224608732801 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -5230222716260323402 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -2711158084909620087 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 2372363512287074498 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 7266707799985424148 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -6332721202846256612 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 6852369643424888457 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -4495945907781216849 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 6979389481761624488 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 6149574100932411552 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -7102954216156715848 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": 7536304465515658 },
+		{ "m_Collection": "cab-dafb17ce4d0a8c82ae3a86d2deaadfb9", "m_PathID": -7590954819843937854 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

@@ -1,0 +1,164 @@
+--local AZhenMessage = GameTableDefine.AZhenMessage
+--local TalkUI = GameTableDefine.TalkUI
+--local EventManager = require("Framework.Event.Manager")
+--local FloatUI = GameTableDefine.FloatUI
+--local FloorMode = GameTableDefine.FloorMode
+--local CityMode = GameTableDefine.CityMode
+--local ConfigMgr = GameTableDefine.ConfigMgr
+--
+----从第二个场景开始,负责管理办公室的阿珍头上气泡的显示与关闭
+--
+----对应对话表的名字
+--local MAX_LV = "warning_max"   --type 1
+--local NO_SATISFY = "warning_angry" --type 2
+--local WILL_GO = "warning_go" --type 3
+--
+--local AZHEN_MESSAGE = "azhen_message"
+--
+--function AZhenMessage:Init()--实际上阿珍出现的时间本身也很迷,无法准确定位....只能说,进入游戏几秒后...
+--    if self.IsInit then
+--        return
+--    end
+--    local buildingId = CityMode:GetCurrentBuilding()
+--
+--    if buildingId and buildingId > 100 then
+--        self.azhenData = LocalDataManager:GetDataByKey(AZHEN_MESSAGE)
+--        self.m_type = {[MAX_LV] = 1, [NO_SATISFY] = 2, [WILL_GO] = 3}
+--        self.type_to_name = {}
+--
+--        for k,v in pairs(self.m_type) do
+--            self.type_to_name[v] = k
+--        end
+--        if self.azhenTimer then
+--            GameTimer:StopTimer(self.azhenTimer)
+--            self.azhenTimer = nil
+--        end
+--        self.azhenTimer = GameTimer:CreateNewTimer(5, function()
+--            self.azhen = FloorMode:GetScene():GetAZhenMode()
+--            if self.azhen then
+--                FloatUI:RemoveObjectCrossCamera(self.azhen)--AZhen属于员工,原本有一个统一的表情的
+--                self:RefreshUIView()
+--            end
+--            self.azhenTimer = nil
+--        end)
+--    end
+--    self.IsInit = true
+--end
+--
+--function AZhenMessage:ReceiveMessage(type, receive, para1, para2)--receive_or_remove
+--    --这里如果不在主场景的话阿珍不处理消息了
+--    if GameStateManager:GetCurrentGameState() == GameStateManager.GAME_STATE_INSTANCE then
+--        return
+--    end
+--    --处理信息,接收或者是撤回
+--    if not self.azhen then
+--        self:Init()
+--    end
+--
+--    local buildingId = CityMode:GetCurrentBuilding()
+--    if buildingId and buildingId <= 100 then
+--        return
+--    end
+--
+--    local typeId = self.m_type[type]
+--
+--    local curr = self.azhenData[typeId .. "_" .. para1]
+--    if receive then--接收到消息,添加
+--        if curr == nil then
+--            self.azhenData[typeId .. "_"..para1] = {}
+--
+--            local curr = self.azhenData[typeId .. "_" ..para1]
+--            curr.type = typeId
+--            curr.id = para1 or 1--companyId
+--            curr.r = para2 or 1--roomId
+--            LocalDataManager:WriteToFile()
+--        end
+--    else--移除消息
+--        if curr ~= nil then
+--            --curr = nil
+--            self.azhenData[typeId .. "_" ..para1] = nil
+--            LocalDataManager:WriteToFile()
+--        end
+--    end
+--
+--    self:RefreshUIView()
+--end
+--
+--function AZhenMessage:GetActiveTalk()
+--    local curr = nil
+--    for k,v in pairs(self.azhenData or {}) do
+--        curr = v
+--        break
+--    end
+--
+--    local roomType = ConfigMgr.config_rooms[curr.r].room_index_number
+--    TalkUI:OpenTalk(self.type_to_name[curr.type],
+--    {
+--        companyName = GameTextLoader:ReadText("TXT_COMPANY_C"..curr.id .."_NAME"),
+--        roomName = GameTextLoader:ReadText("TXT_ROOM_R" .. roomType .. "_NAME")
+--    },
+--    function()--final
+--        self:RefreshUIView()
+--    end,
+--    function()--begin
+--        self:ReceiveMessage(self.type_to_name[curr.type], false, curr.id, curr.r)
+--    end)
+--end
+--
+--function AZhenMessage:RefreshUIView()
+--    if not self.azhen then
+--        return
+--    end
+--
+--    local curr = nil
+--    for k,v in pairs(self.azhenData or {}) do
+--        --生成气泡,绑定点击事件,以及关闭对话的回调(删除当前对话)
+--        curr = v
+--        break
+--    end
+--
+--    if curr ~= nil then
+--        FloatUI:SetObjectCrossCamera(self.azhen, function(view)
+--            if view then
+--                view:Invoke("AZhenTalk", function()
+--                    self:GetActiveTalk()
+--                end)
+--            end
+--        end)
+--    else
+--        FloatUI:RemoveObjectCrossCamera(self.azhen)
+--    end
+--end
+--
+--function AZhenMessage:Clear()
+--    if self.azhenTimer then
+--        GameTimer:StopTimer(self.azhenTimer)
+--        self.azhenTimer = nil
+--    end
+--    self.IsInit = nil
+--end
+--
+--function AZhenMessage:OnExit()
+--    self:Clear()
+--end
+--
+--EventManager:RegEvent("COMPANY_LV_MAX", function(companyId, roomId)--公司满级
+--    AZhenMessage:ReceiveMessage(MAX_LV, true, companyId, roomId)
+--end)
+--
+--EventManager:RegEvent("COMPANY_FIRE", function(companyId, roomId)--公司离开
+--    AZhenMessage:ReceiveMessage(NO_SATISFY, false, companyId, roomId)
+--end)
+--
+--EventManager:RegEvent("COMPANY_ANGRY", function(companyId, roomId)--公司不满意
+--    AZhenMessage:ReceiveMessage(NO_SATISFY, true, companyId, roomId)
+--end)
+--
+--EventManager:RegEvent("COMPANY_HAPPY", function(companyId, roomId)--公司满意
+--    AZhenMessage:ReceiveMessage(NO_SATISFY, false, companyId, roomId)
+--    AZhenMessage:ReceiveMessage(WILL_GO, false, companyId, roomId)
+--end)
+--
+--EventManager:RegEvent("COMPANY_WILL_GO", function(companyId, roomId)--公司快离开
+--    AZhenMessage:ReceiveMessage(WILL_GO, true, companyId, roomId)
+--end)

@@ -1,0 +1,118 @@
+{
+	"m_BakedConvexCollisionMesh": "",
+	"m_BakedTriangleCollisionMesh": "",
+	"m_BindPose": [],
+	"m_BoneNameHashes": [],
+	"m_BonesAABB": [],
+	"m_CompressedMesh": {
+		"m_BoneIndices": {
+			"m_BitSize": 0,
+			"m_Data": "",
+			"m_NumItems": 0
+		},
+		"m_FloatColors": {
+			"m_BitSize": 0,
+			"m_Data": "",
+			"m_NumItems": 0,
+			"m_Range": 0,
+			"m_Start": 0
+		},
+		"m_Normals": {
+			"m_BitSize": 0,
+			"m_Data": "",
+			"m_NumItems": 0,
+			"m_Range": 0,
+			"m_Start": 0
+		},
+		"m_NormalSigns": {
+			"m_BitSize": 0,
+			"m_Data": "",
+			"m_NumItems": 0
+		},
+		"m_Tangents": {
+			"m_BitSize": 0,
+			"m_Data": "",
+			"m_NumItems": 0,
+			"m_Range": 0,
+			"m_Start": 0
+		},
+		"m_TangentSigns": {
+			"m_BitSize": 0,
+			"m_Data": "",
+			"m_NumItems": 0
+		},
+		"m_Triangles": {
+			"m_BitSize": 0,
+			"m_Data": "",
+			"m_NumItems": 0
+		},
+		"m_UV": {
+			"m_BitSize": 0,
+			"m_Data": "",
+			"m_NumItems": 0,
+			"m_Range": 0,
+			"m_Start": 0
+		},
+		"m_UVInfo": 0,
+		"m_Vertices": {
+			"m_BitSize": 0,
+			"m_Data": "",
+			"m_NumItems": 0,
+			"m_Range": 0,
+			"m_Start": 0
+		},
+		"m_Weights": {
+			"m_BitSize": 0,
+			"m_Data": "",
+			"m_NumItems": 0
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "unity default resources", "m_PathID": 0 },
+	"m_HideFlags": 0,
+	"m_IndexBuffer": "",
+	"m_IndexFormat": 0,
+	"m_IsReadable": false,
+	"m_KeepIndices": false,
+	"m_KeepVertices": false,
+	"m_LocalAABB": {
+		"m_Center": {
+			"m_X": 0,
+			"m_Y": 0,
+			"m_Z": 0
+		},
+		"m_Extent": {
+			"m_X": 0,
+			"m_Y": 0,
+			"m_Z": 0
+		}
+	},
+	"m_MeshCompression": 0,
+	"m_MeshMetrics_0_": 0,
+	"m_MeshMetrics_1_": 0,
+	"m_MeshOptimizationFlags": -1,
+	"m_MeshUsageFlags": 0,
+	"m_Name": "icosahedron",
+	"m_PrefabAsset": { "m_Collection": "unity default resources", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "unity default resources", "m_PathID": 0 },
+	"m_RootBoneNameHash": 0,
+	"m_Shapes": {
+		"m_Channels": [],
+		"m_FullWeights": [],
+		"m_Shapes": [],
+		"m_Vertices": []
+	},
+	"m_StreamData": {
+		"m_Offset": 0,
+		"m_Path": "",
+		"m_Size": 0
+	},
+	"m_SubMeshes": [],
+	"m_VariableBoneCountWeights": {
+		"m_Data": []
+	},
+	"m_VertexData": {
+		"m_Channels": [],
+		"m_Data": "",
+		"m_VertexCount": 0
+	}
+}

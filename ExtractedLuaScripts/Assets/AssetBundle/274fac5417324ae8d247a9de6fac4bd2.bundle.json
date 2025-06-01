@@ -1,0 +1,29 @@
+{
+	"m_AssetBundleName": "274fac5417324ae8d247a9de6fac4bd2.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/CycleInstance/Castle/Module/FactoryTransport.txt": {
+			"m_Asset": { "m_Collection": "cab-7a11d3859e80a02b080a351c9bcf5281", "m_PathID": 291999069500600305 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-7a11d3859e80a02b080a351c9bcf5281", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-7a11d3859e80a02b080a351c9bcf5281", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "274fac5417324ae8d247a9de6fac4bd2.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-7a11d3859e80a02b080a351c9bcf5281", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-7a11d3859e80a02b080a351c9bcf5281", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-7a11d3859e80a02b080a351c9bcf5281", "m_PathID": 291999069500600305 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

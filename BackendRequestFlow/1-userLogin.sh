@@ -1,0 +1,12 @@
+curl \
+	-H 'content-type: application/json' \
+	-H 'x-wre-app-name: officebuilding_warrior_ioshw' \
+	-H 'accept: */*' \
+	-H 'x-wre-app-id: officebuilding_warrior_ioshw' \
+	-H 'x-wre-channel: gp_ios' \
+	--compressed \
+	-H 'x-wre-version: 1.0.1' \
+	-H 'accept-language: en-SE;q=1, sv-SE;q=0.9' \
+	-H 'user-agent: IdleOfficeTycoon/1.7.7 (iPhone; iOS 18.5; Scale/3.00)' \
+	-X POST https://guigu1.loveballs.club/gameapi/v1/users/login/v2 \
+	-d '{"deviceId":"2B10C097-6CB2-4C49-8EE1-AA47EBFC4EFE","loginType":"","accountId":""}'

@@ -1,0 +1,143 @@
+{
+	"m_AssetBundleName": "07a5e36a06dfa87d00ea2c3343dcce0f.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/Shop/AdFreeUI.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -798467915672816679 },
+			"m_PreloadIndex": 14,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/AdFreeUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -4703305448742786520 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/DiamondFundUI.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 5200760155783864257 },
+			"m_PreloadIndex": 5,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/DiamondFundUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -513141317850230435 },
+			"m_PreloadIndex": 15,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/GameCenterUI.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -676410477972549372 },
+			"m_PreloadIndex": 12,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/GameCenterUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 6316313916656766034 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/IAP.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -7346126036395244177 },
+			"m_PreloadIndex": 11,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/IntroduceUI.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 574877806608343797 },
+			"m_PreloadIndex": 17,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/IntroduceUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 4483408026615010185 },
+			"m_PreloadIndex": 6,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/LeyoHKIAP.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -1404641846968867343 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/PurchaseSuccessUI.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 8453926228157701900 },
+			"m_PreloadIndex": 4,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/PurchaseSuccessUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 8087319321698579300 },
+			"m_PreloadIndex": 8,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/RouletteUI.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -8340719793102861593 },
+			"m_PreloadIndex": 19,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/RouletteUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -3265541513776639888 },
+			"m_PreloadIndex": 10,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/Shop.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -3001382034278323116 },
+			"m_PreloadIndex": 16,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/ShopAfterPerson.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -1199079424363396386 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/ShopManager.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -5531568212665333477 },
+			"m_PreloadIndex": 13,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/ShopUI.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 6498627744215367000 },
+			"m_PreloadIndex": 18,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/ShopUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 8472486226434007362 },
+			"m_PreloadIndex": 7,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Shop/WarriorIAP.txt": {
+			"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -8937461045002289097 },
+			"m_PreloadIndex": 9,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "07a5e36a06dfa87d00ea2c3343dcce0f.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 6316313916656766034 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -1404641846968867343 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -1199079424363396386 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -4703305448742786520 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 8453926228157701900 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 5200760155783864257 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 4483408026615010185 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 8472486226434007362 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 8087319321698579300 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -8937461045002289097 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -3265541513776639888 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -7346126036395244177 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -676410477972549372 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -5531568212665333477 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -798467915672816679 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -513141317850230435 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -3001382034278323116 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 574877806608343797 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": 6498627744215367000 },
+		{ "m_Collection": "cab-cf329d29a5379cfc4ba3c767294b2343", "m_PathID": -8340719793102861593 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

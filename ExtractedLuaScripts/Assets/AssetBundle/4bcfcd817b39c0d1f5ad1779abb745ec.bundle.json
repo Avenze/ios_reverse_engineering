@@ -1,0 +1,41 @@
+{
+	"m_AssetBundleName": "4bcfcd817b39c0d1f5ad1779abb745ec.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/FootballClub/FootballClubController.txt": {
+			"m_Asset": { "m_Collection": "cab-813e7e9b0eb200ac9c24759e6e1a0433", "m_PathID": 937181031462564489 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/FootballClubModel.txt": {
+			"m_Asset": { "m_Collection": "cab-813e7e9b0eb200ac9c24759e6e1a0433", "m_PathID": -3531711027995835937 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/FootballClubScene.txt": {
+			"m_Asset": { "m_Collection": "cab-813e7e9b0eb200ac9c24759e6e1a0433", "m_PathID": -6505624650284935559 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-813e7e9b0eb200ac9c24759e6e1a0433", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-813e7e9b0eb200ac9c24759e6e1a0433", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "4bcfcd817b39c0d1f5ad1779abb745ec.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-813e7e9b0eb200ac9c24759e6e1a0433", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-813e7e9b0eb200ac9c24759e6e1a0433", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-813e7e9b0eb200ac9c24759e6e1a0433", "m_PathID": -6505624650284935559 },
+		{ "m_Collection": "cab-813e7e9b0eb200ac9c24759e6e1a0433", "m_PathID": 937181031462564489 },
+		{ "m_Collection": "cab-813e7e9b0eb200ac9c24759e6e1a0433", "m_PathID": -3531711027995835937 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

@@ -1,0 +1,59 @@
+{
+	"m_AssetBundleName": "4ba95801a2cba8dc7b2852c0f7843a29.bundle",
+	"m_Container": {
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/PropertyWorker/PropertyGoToWorkState.txt": {
+			"m_Asset": { "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": 6739598964021361891 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/PropertyWorker/PropertyInBusState.txt": {
+			"m_Asset": { "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": 3374433902990075600 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/PropertyWorker/PropertyOffWorkState.txt": {
+			"m_Asset": { "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": -3708110555396809358 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/PropertyWorker/PropertyServiceState.txt": {
+			"m_Asset": { "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": -5803777963952813539 },
+			"m_PreloadIndex": 4,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/PropertyWorker/PropertyStandUpState.txt": {
+			"m_Asset": { "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": 8296002985260973492 },
+			"m_PreloadIndex": 5,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/PropertyWorker/PropertyWorkState.txt": {
+			"m_Asset": { "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": 3043962091518418241 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "4ba95801a2cba8dc7b2852c0f7843a29.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": 3043962091518418241 },
+		{ "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": 6739598964021361891 },
+		{ "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": 3374433902990075600 },
+		{ "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": -3708110555396809358 },
+		{ "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": -5803777963952813539 },
+		{ "m_Collection": "cab-56d9ea38b4f379cfc87b0461e0c31566", "m_PathID": 8296002985260973492 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

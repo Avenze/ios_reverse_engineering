@@ -1,0 +1,59 @@
+{
+	"m_AssetBundleName": "d44513648345ce1dac150d68e3b11575.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/CycleInstance/Castle/CycleCastleHeroManager.txt": {
+			"m_Asset": { "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": 2559883380443956018 },
+			"m_PreloadIndex": 4,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Castle/CycleCastleModel.txt": {
+			"m_Asset": { "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": -1031694170578931256 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Castle/CycleCastleRankManager.txt": {
+			"m_Asset": { "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": -1733223715026993755 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Castle/CycleCastleRoom.txt": {
+			"m_Asset": { "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": 8756852598080107415 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Castle/CycleCastleScene.txt": {
+			"m_Asset": { "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": 799767334223439028 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Castle/CycleCastleTaskManager.txt": {
+			"m_Asset": { "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": -3817924962939103069 },
+			"m_PreloadIndex": 5,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "d44513648345ce1dac150d68e3b11575.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": 799767334223439028 },
+		{ "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": 8756852598080107415 },
+		{ "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": -1031694170578931256 },
+		{ "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": -1733223715026993755 },
+		{ "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": 2559883380443956018 },
+		{ "m_Collection": "cab-b65fc63b736e9be65ad8d4fa76f6da2b", "m_PathID": -3817924962939103069 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

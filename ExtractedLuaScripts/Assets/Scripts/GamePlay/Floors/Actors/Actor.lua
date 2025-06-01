@@ -1,0 +1,1068 @@
+--local Class = require("Framework.Lua.Class")
+--local UIView = require("Framework.UI.View")
+--local socket = require "socket"
+--local Actor = Class("Actor")
+--
+--local ColliderResponse = require("GamePlay.Floors.Actors.ColliderResponse")
+--local GameResMgr = require("GameUtils.GameResManager")
+--local UnityHelper = CS.Common.Utils.UnityHelper
+--local AnimationUtil = CS.Common.Utils.AnimationUtil
+--local GameObject = CS.UnityEngine.GameObject
+--local AnimaitonKeyFrameEvents = CS.AnimaitonKeyFrameEvents
+--local EventManager = require("Framework.Event.Manager")
+--local CfgMgr = GameTableDefine.ConfigMgr
+--local DressUpDataManager = GameTableDefine.DressUpDataManager
+--local FloorMode = GameTableDefine.FloorMode
+--local ActorList = {}
+--local EmployeeActorList = {}
+--local RoomEmployeeActors = {}  --{{roomIndex, {actor1, actor2}}}
+--local EmployeeActorFirstList = {}
+--local OutActorGos = {}
+--local InActorGos = {}
+--local TimerActorIndex = 1
+--local TimerActorHandler = nil
+--local isFirstRunAIState = true
+--local TimerInstanceHandler = nil
+--local TimerInstanceIndex = 1
+--local RUN_AI_MAX = 20  --每心跳执行的AI的最大数目
+--
+--local InstanceWorkers = {}
+--
+--Actor.FLAG_ACITVE                   = 1 << 1
+--Actor.FLAG_LEAVE_SCENE              = 1 << 2
+--Actor.FLAG_WALKING                  = 1 << 3
+--Actor.FLAG_SPONSOR_WATTING          = 1 << 5
+--Actor.FLAG_EMPLOYEE_DISMISS         = 1 << 6
+--Actor.FLAG_EMPLOYEE_ON_WORKING      = 1 << 7
+--Actor.FLAG_EMPLOYEE_BY_BUS          = 1 << 8
+--Actor.FLAG_EMPLOYEE_OFF_WORKING     = 1 << 9
+--Actor.FLAG_EMPLOYEE_PROPERTY        = 1 << 10
+--Actor.FLAG_EMPLOYEE_PROPERTY_WORKER = 1 << 11
+--Actor.FLAG_EMPLOYEE_PROPERTY_ON_WORKING = 1 << 12
+--Actor.FLAG_SKIP_NIGHT_LEAVE         = 1 << 13
+--Actor.FLAG_EMPLOYEE_ON_TURNBACK     = 1 << 14
+--Actor.FLAG_EMPLOYEE_IN_QUEUE        = 1 << 15
+--Actor.FLAG_EMPLOYEE_MANAGER_WORKER  = 1 << 16
+--Actor.FLAG_CAR_BOSS                 = 1 << 17
+--Actor.FLAG_BACK_TO_WORK             = 1 << 18
+--Actor.FLAG_EMPLOYEE_MANAGER_LEAVE   = 1 << 19
+--Actor.FLAG_CAMERA_FOLLOW_CAR        = 1 << 20
+--
+--
+--
+-----副本员工相关的FLAG
+--Actor.FLAG_INSTANCEWORKER_READY_WORKING = 1 << 21
+--Actor.FLAG_INSTANCEWORKER_ON_WORKING = 1 << 22
+--Actor.FLAG_INSTANCEWORKER_ON_EATING_IDLE = 1 << 23
+--Actor.FLAG_INSTANCEWORKER_ON_SLEEPING_IDLE = 1 << 24
+--Actor.FLAG_INSTANCEWORKER_READY_EATING = 1 << 25
+--Actor.FLAG_INSTANCEWORKER_READY_SLEEPING = 1 << 26
+--
+--
+--Actor.FLAG_INSTANCEWORKER_ON_SLEEPING = 1 << 35
+--Actor.FLAG_INSTANCEWORKER_ON_EATING = 1 << 36
+--Actor.FLAG_INSTANCEWORKER_ON_WORKSIT = 1 << 40  --往工位点走
+--Actor.FLAG_INSTANCEWORKER_ON_WORKPOS = 1 << 41  --往工作点走,
+--
+--Actor.FLAG_EMPLOYEE_ON_TOILET       = 1 << ColliderResponse.TYPE_GOTO_TOILE  --34
+--Actor.FLAG_EMPLOYEE_ON_REST         = 1 << ColliderResponse.TYPE_GOTO_REST   --35
+--Actor.FLAG_EMPLOYEE_ON_MEETING      = 1 << ColliderResponse.TYPE_GOTO_MEETING
+--Actor.FLAG_EMPLOYEE_ON_ENTERTAINMENT= 1 << ColliderResponse.TYPE_GOTO_ENTERTAINMENT
+--Actor.FLAG_EMPLOYEE_ON_GYM          = 1 << ColliderResponse.TYPE_GOTO_GYM
+--
+--Actor.FLAG_EMPLOYEE_ON_ACTION = Actor.FLAG_EMPLOYEE_ON_TOILET
+--                                    | Actor.FLAG_EMPLOYEE_ON_MEETING
+--                                    | Actor.FLAG_EMPLOYEE_ON_REST
+--                                    | Actor.FLAG_EMPLOYEE_ON_ENTERTAINMENT
+--                                    | Actor.FLAG_EMPLOYEE_ON_GYM
+--                                    | Actor.FLAG_EMPLOYEE_PROPERTY_ON_WORKING
+--                                    | Actor.FLAG_INSTANCEWORKER_ON_EATING
+--                                    | Actor.FLAG_INSTANCEWORKER_ON_SLEEPING
+--
+--
+--Actor.LOADING_COMPLETE              = 1
+--Actor.LOADING_FIELD                 = 2
+--Actor.EVENT_ADD_FLAG                = 3
+--Actor.EVENT_REMOVE_FLAG             = 4
+--
+--Actor.TYPE_WASTE                    = "waste"
+--
+--function Actor:DefineFlag(flag)
+--    return 1 << flag
+--end
+--
+--function Actor:HasFlag(flag)
+--    return (self.m_flags & (flag)) ~= 0
+--end
+--
+--function Actor:AddFlag(flag)
+--    self.m_flags = self.m_flags | flag
+--    self:Event(self.EVENT_ADD_FLAG, flag)
+--end
+--
+--function Actor:RemoveFlag(flag)
+--    self.m_flags = self.m_flags & ~flag
+--    self:Event(self.EVENT_REMOVE_FLAG, flag)
+--end
+--
+--function Actor:CreateGo()
+--    local cb = function(go)
+--        if self.m_rootGo and not self.m_rootGo:IsNull() then
+--            UnityHelper.AddChildToParent(self.m_rootGo.transform, go.transform)
+--            self.m_go = go
+--            self:OutActorChange(self.m_go, true)
+--            if self.m_type == "TYPE_EMPLOYEE" then
+--                self.m_go:SetActive(false)
+--            else
+--                self.m_go:SetActive(true)
+--            end
+--            --如果角色的id>0的话说明该角色是有换装的，需要检测一下1.配置上是否有默认装扮，2.存档上是否有保存的装扮
+--            if self.m_personID > 0 then
+--                self:InitConfigJewerly(function()
+--                    self:InitWithDressUp()
+--                end)
+--
+--            end
+--
+--            --TODO Animator CullUpdateTransforms   最终可以直接在Prefab上修改，不增加运行时的工作量.
+--            local cullUpdateTransformsFlag = true;
+--            if cullUpdateTransformsFlag then
+--                local animator = go:GetComponent("Animator")
+--                if not animator:IsNull() and not animator.applyRootMotion then
+--                    animator.cullingMode = CS.UnityEngine.AnimatorCullingMode.CullUpdateTransforms
+--                end
+--            end
+--            --self.m_go:AddComponent(typeof(AnimaitonKeyFrameEvents))
+--        else
+--            UnityHelper.DestroyGameObject(go)
+--            self:Destroy()
+--        end
+--        self:Event(Actor.LOADING_COMPLETE)
+--        -- self.m_go:SetActive(true)
+--    end
+--    if self.m_go and not self.m_go:IsNull() then
+--        cb(self.m_go)
+--    elseif self.m_tempGo and not self.m_tempGo:IsNull() then
+--        cb(GameObject.Instantiate(self.m_tempGo))
+--    elseif self.m_prefab then
+--        GameResMgr:AInstantiateObjectAsyncManual(self.m_prefab, self, cb)
+--    else
+--        self:Destroy()
+--    end
+--end
+--
+--function Actor:CreateActor(isOfficeRoom, roomIndex, ...)
+--    for k, v in pairs(ActorList or {}) do
+--        if not v:HasFlag(Actor.FLAG_ACITVE) and v.m_type ~= nil and v.m_type == self.m_type then
+--            return v
+--        end
+--    end
+--    local actor = self.new(...)
+--    -- -- print("CreateActor type is:"..self.m_type)
+--    -- if actor.__cname == "CompanyEmployee" and isOfficeRoom then
+--    --     -- table.insert(EmployeeActorList, actor)
+--    --     local isNewRoom = true
+--    --     for index, roomData in ipairs(RoomEmployeeActors) do
+--    --         if roomData[1] == roomIndex then
+--    --             table.insert(roomData[2], actor)
+--    --             isNewRoom = false
+--    --             break
+--    --         end
+--    --     end
+--    --     if isNewRoom then
+--    --         table.insert(RoomEmployeeActors, {roomIndex, {actor}})
+--    --     end
+--    -- else
+--    --     table.insert(ActorList, actor)
+--    -- end
+--    if actor.__cname == "InstanceWorkers" then
+--        table.insert(InstanceWorkers, actor)
+--    else
+--        table.insert(ActorList, actor)
+--    end
+--
+--    return actor
+--end
+--
+----static function
+--function Actor:UpdateActorList(dt)
+--    -- if not TimerActorHandler then
+--    --     TimerActorHandler = GameTimer:CreateNewMilliSecTimer(400, handler(Actor, Actor.TimerUpdateActorList), true, true)
+--    -- end
+--    if not TimerInstanceHandler then
+--        TimerInstanceHandler = GameTimer:CreateNewMilliSecTimer(200, handler(Actor, Actor.TimerUpdateInstanceWorkerList), true, true)
+--    end
+--
+--    for i, actor in ipairs(EmployeeActorList) do
+--        if actor.m_type == Actor.TYPE_WASTE then
+--            table.remove(EmployeeActorList, i)
+--        end
+--    end
+--    for i, actor in ipairs(ActorList or {}) do
+--        if actor:HasFlag(self.FLAG_ACITVE) then
+--            actor:Update(dt)
+--        elseif actor.m_type == Actor.TYPE_WASTE then
+--            table.remove(ActorList, i)
+--        end
+--    end
+--end
+--
+--function Actor:RunMeetingAIUpdate()
+--    -- local meetings = self:SelectProcessAIActorByState()
+--    -- if Tools:GetTableSize(EmployeeActorList) > 0 then
+--    --     if Tools:GetTableSize(meetings) > 0 then
+--    --         for _, index in ipairs(meetings) do
+--    --             if EmployeeActorList[TimerActorIndex]:HasFlag(self.FLAG_ACITVE) then
+--    --                 EmployeeActorList[TimerActorIndex]:Update()
+--    --             end
+--    --         end
+--    --     end
+--    -- end
+--end
+--
+--function Actor:TimerUpdateInstanceWorkerList()
+--    if Tools:GetTableSize(InstanceWorkers) <= 0 then
+--        return
+--    end
+--    for i, actor in ipairs(InstanceWorkers) do
+--        if actor.m_type == Actor.TYPE_WASTE then
+--            table.remove(InstanceWorkers, i)
+--            i = i + 1
+--        end
+--    end
+--    if TimerInstanceIndex > Tools:GetTableSize(InstanceWorkers) then
+--        TimerInstanceIndex  = TimerInstanceIndex - Tools:GetTableSize(InstanceWorkers)
+--    end
+--    if InstanceWorkers[TimerInstanceIndex]:HasFlag(self.FLAG_ACITVE) then
+--        -- InstanceWorkers[TimerInstanceIndex]:Update()
+--    end
+--        TimerActorIndex  = TimerActorIndex + 1
+--end
+--
+--function Actor:TimerUpdateActorList()
+--
+--    -- if TimerActorIndex > Tools:GetTableSize(EmployeeActorList) then
+--    --     TimerActorIndex  = TimerActorIndex - Tools:GetTableSize(EmployeeActorList)
+--    -- end
+--    -- local meetings = self:SelectProcessAIActorByState()
+--    -- if Tools:GetTableSize(EmployeeActorList) > 0 then
+--    --     if Tools:GetTableSize(meetings) > 0 then
+--    --         for _, index in ipairs(meetings) do
+--    --             if EmployeeActorList[index]:HasFlag(self.FLAG_ACITVE) then
+--    --                 EmployeeActorList[index]:Update()
+--    --             end
+--    --         end
+--    --         TimerActorIndex = TimerActorIndex + meetings[Tools:GetTableSize(meetings)]
+--    --         if TimerActorIndex > Tools:GetTableSize(EmployeeActorList) then
+--    --             TimerActorIndex  = TimerActorIndex - Tools:GetTableSize(EmployeeActorList)
+--    --         end
+--    --         if Tools:GetTableSize(meetings) < RUN_AI_MAX then
+--    --             for i = 1, RUN_AI_MAX - Tools:GetTableSize(meetings), 1 do
+--    --                 if TimerActorIndex > Tools:GetTableSize(EmployeeActorList) then
+--    --                     TimerActorIndex  = 1
+--    --                 end
+--    --                 if TimerActorIndex <= Tools:GetTableSize(EmployeeActorList) and  EmployeeActorList[TimerActorIndex]:HasFlag(self.FLAG_ACITVE) then
+--    --                     EmployeeActorList[TimerActorIndex]:Update()
+--    --                 end
+--    --                 TimerActorIndex  = TimerActorIndex + 1
+--    --             end
+--    --         end
+--    --     else
+--    --         for i = 1, RUN_AI_MAX, 1 do
+--    --             if TimerActorIndex > Tools:GetTableSize(EmployeeActorList) then
+--    --                 TimerActorIndex  = 1
+--    --             end
+--    --             if EmployeeActorList[TimerActorIndex]:HasFlag(self.FLAG_ACITVE) then
+--    --                 EmployeeActorList[TimerActorIndex]:Update()
+--    --             end
+--    --             TimerActorIndex  = TimerActorIndex + 1
+--    --         end
+--    --     end
+--
+--    -- end
+--    local roomDataCount = Tools:GetTableSize(RoomEmployeeActors)
+--end
+----[[
+--    @desc: 删选AI的状态，把开会的AI作为第一优先级进行处理
+--    author:fengyu
+--    time:2023-03-06 18:37:12
+--    @return:返回meeting状态的index集合，优先处理在AI集合里面的
+--]]
+--function Actor:SelectProcessAIActorByState()
+--    --通过AI状态的筛选，优先处理当前为开会状态的
+--    local meetingIndexs = {}
+--    if Tools:GetTableSize(EmployeeActorList) > 0 then
+--        for index, actor in ipairs(EmployeeActorList) do
+--            if actor:HasFlag(self.FLAG_EMPLOYEE_ON_MEETING) then
+--                table.insert(meetingIndexs, index)
+--            elseif actor.m_state and actor.m_state.name == "StateMeeting" then
+--                table.insert(meetingIndexs, index)
+--            elseif actor.m_nextState and actor.m_nextState.name == "StateMeeting" then
+--                table.insert(meetingIndexs, index)
+--            end
+--        end
+--    end
+--    return meetingIndexs
+--end
+--
+--function Actor:DestroyAllActor()
+--    for i, actor in ipairs(ActorList or {}) do
+--        actor:Destroy()
+--    end
+--    ActorList = {}
+--    EmployeeActorList = {}
+--    TimerActorIndex = 1
+--    if TimerActorHandler then
+--        GameTimer:StopTimer(TimerActorHandler)
+--        TimerActorHandler = nil
+--    end
+--    for i, actor in ipairs(InstanceWorkers or {}) do
+--        actor:Destroy()
+--    end
+--    InstanceWorkers = {}
+--    TimerInstanceIndex = 1
+--    if TimerInstanceHandler then
+--        GameTimer:StopTimer(TimerInstanceHandler)
+--        TimerInstanceHandler = nil
+--    end
+--    InActorGos = {}
+--    OutActorGos = {}
+--    ColliderResponse:InitEventMgr()
+--    collectgarbage("collect")
+--end
+--
+--function Actor:GetAllActorList()
+--    return ActorList or {}
+--end
+--
+--function Actor:DebugAddFlag(flag)
+--    for i, actor in ipairs(ActorList or {}) do
+--        if not actor:HasFlag(self.FLAG_EMPLOYEE_ON_ACTION | self.FLAG_EMPLOYEE_OFF_WORKING | self.FLAG_EMPLOYEE_PROPERTY | self.FLAG_BACK_TO_WORK) then
+--            actor:AddFlag(flag)
+--        end
+--    end
+--end
+--
+--function Actor:RefreshEmployeesMood()
+--    for i, actor in ipairs(ActorList or {}) do
+--        if actor:HasFlag(self.FLAG_ACITVE) and actor.UpdateFurnitureMood then
+--            actor:UpdateFurnitureMood()
+--        end
+--    end
+--end
+----tools
+--function Actor:CostTime(method, name, ...)
+--	-- if type(method) ~= "function" or type(name) ~= "string" then return end
+--	local start = socket.gettime() * 1000
+--	-- print(string.format("%s start time : %.4f", name, start));
+--	method(...);
+--	local now = socket.gettime() * 1000
+--	-- print(string.format("%s end time   : %.4f", name, now));
+--	--(string.format("%s cost time  : %.4f", name, now - start));
+--end
+--
+--function Actor:GetTableSize(t)
+--    local r = 0
+--    for _, _ in pairs(t or {}) do r = r + 1 end
+--    return r
+--end
+--
+-------static function end
+--function Actor:ctor()
+--    self.m_id = nil
+--    self.m_type = nil
+--    self.m_flags = 0
+--
+--    self.m_position = nil
+--    self.m_state = nil
+--    self.m_nextState = nil
+--
+--    self.m_subState = nil
+--    self.m_nextSubState = nil
+--
+--    self.m_prefab = nil
+--    self.m_rootGoName = nil
+--    self.m_go = nil
+--    self.m_rootGo = nil
+--    self.m_tempGo = nil
+--    ---用于换装标识的角色ID，2022-11-30
+--    self.m_personID = 0
+--    --用于换装的标识的性别，默认都是0，只有personID大于0的才会初始化这个性别，老板和阿珍需要特殊处理老板根据模型来，阿珍就是女
+--    self.m_sex = 0
+--    --标识楼层隐藏了
+--    self.m_isFloorHide = true
+--    self:InitStates()
+--    self:OverrideStates()
+--end
+--
+--function Actor:Init(personID)
+--    self:AddFlag(Actor.FLAG_ACITVE)
+--    if personID then
+--        self.m_personID = personID
+--        --处理性别的相关内容
+--        if self.m_personID == 1 or self.m_personID == 2 then
+--            --老板的性别根据prefab的预制名字来判断
+--            local name = self.m_prefab
+--            if string.find(name, "Boss_002.prefab") or string.find(name, "Secretary_001.prefab") then
+--                self.m_sex = 2
+--            else
+--                self.m_sex = 1
+--            end
+--        else
+--            local itemConfig = CfgMgr.config_employees[personID]
+--            if itemConfig then
+--                self.m_sex = itemConfig.sex
+--            end
+--        end
+--        if self.m_personID > 0 then
+--            GameTableDefine.PersonInteractUI:AddEmployeeDataList(self.m_personID)
+--            GameTableDefine.DressUpDataManager:CheckAddPersonRefreshDressUpData(self.m_personID)
+--        end
+--    else
+--        self.m_personID = 0
+--    end
+--
+--    --2022-11-30增加换装系统的消息注册 fy
+--    if self.m_personID > 0 then
+--        --("Actor:Init:Reg Dressup event:"..self.m_personID or type(nil))
+--        EventManager:RegEvent("ChangeDressUpSuccess_"..self.m_personID, function(personID, type, oldID, newID)
+--            if self.m_personID == personID then
+--                self:ChangeDressUp(type, oldID, newID)
+--            end
+--        end)
+--        EventManager:RegEvent("DrawOffPersonAllJewerly_"..self.m_personID, function(drawOffIDs)
+--            self:DrawOffPersonAllJewerly(drawOffIDs)
+--        end)
+--
+--        EventManager:RegEvent("DrawOffPersonCurrFashion_"..self.m_personID, function(drawOffID)
+--            self:DrawOffCurrentFashion()
+--        end)
+--    end
+--end
+--
+--function Actor:Exit()
+--    if self.m_state and self.m_state.ClearAnimator then
+--        self.m_state:ClearAnimator()
+--    end
+--    if self.m_go and not self.m_go:IsNull() then
+--        GameObject.Destroy(self.m_go)
+--        GameResMgr:Unload(self)
+--    end
+--    EventManager:UnregEvent("ChangeDressUpSuccess_"..self.m_personID)
+--    EventManager:UnregEvent("DrawOffPersonAllJewerly_"..self.m_personID)
+--    EventManager:UnregEvent("DrawOffPersonCurrFashion_"..self.m_personID)
+--    self:OutActorChange(self.m_go, false)
+--    self.m_go = nil
+--    self.m_state = nil
+--    self.m_flags = 0
+--    self.m_tag = nil
+--end
+--
+--function Actor:Destroy()
+--    self:ClearEntity(self.m_tag)
+--    self:Exit()
+--    self.m_type = Actor.TYPE_WASTE
+--end
+--
+--function Actor:Update(dt)
+--    if self.m_state then
+--        self.m_state:Update(self, dt)
+--    end
+--    self:UpdateState()
+--end
+--
+--function Actor:IsValid()
+--    return self.m_type and self.m_type ~= self.TYPE_WASTE
+--end
+--
+--function Actor:UpdateState()
+--    if self.m_nextState == nil then
+--        return
+--    end
+--
+--    self.m_lastState = self.m_state
+--    self.m_state = self.m_nextState
+--    self.m_nextState = nil
+--    if self.m_lastState then
+--        self.m_lastState:Exit(self)
+--        self.m_lastState:StopTimer()
+--    end
+--    self.m_state:Enter(self)
+--end
+--
+--function Actor:Event(msg, params)
+--    if self.m_state then
+--        self.m_state:Event(self, msg, params)
+--    end
+--end
+--
+--function Actor:GetEntity()
+--end
+--
+--function Actor:SetState(state, params)
+--    -- if self.m_go  then
+--    --     print("Set state go's name:".. self.m_go.name ,"state: "..state.__cname)
+--    -- end
+--    -- if state.__cname == "StateWalk" or state.__cname == "StateWalkEx" then
+--    -- end
+--    if self.m_state == state then
+--        return
+--    end
+--    if GameConfig:IsDebugMode() then
+--        if not self.m_StateInfo then
+--            self.m_StateInfo = {}
+--        end
+--
+--        local a = ((self.m_state or {}).name or "null") .. "->" .. ((state  or {}).name or "null") .. "\n"
+--        local b = "flags: " .. self.m_flags .."\n"
+--        local c = ""
+--        if self.m_type == "TYPE_EMPLOYEE" then
+--            -- local interactions = self:GetEntity(self)
+--            -- if interactions then
+--            --     c =  "interaction: " .. self.m_triggerCounter[interactions.m_tag].."\n"
+--            local actionFlags = {
+--                ["FLAG_EMPLOYEE_ON_TOILET"] = Actor.FLAG_EMPLOYEE_ON_TOILET,
+--                ["FLAG_EMPLOYEE_ON_REST"] = Actor.FLAG_EMPLOYEE_ON_REST,
+--                ["FLAG_EMPLOYEE_ON_MEETING"] = Actor.FLAG_EMPLOYEE_ON_MEETING,
+--                ["FLAG_EMPLOYEE_ON_ENTERTAINMENT"] = Actor.FLAG_EMPLOYEE_ON_ENTERTAINMENT,
+--                ["FLAG_EMPLOYEE_IN_QUEUE"] = Actor.FLAG_EMPLOYEE_IN_QUEUE,
+--                ["FLAG_EMPLOYEE_ON_TURNBACK"] = Actor.FLAG_EMPLOYEE_ON_TURNBACK,
+--                ["FLAG_EMPLOYEE_ON_GYM"] = Actor.FLAG_EMPLOYEE_ON_GYM,
+--                ["FLAG_BACK_TO_WORK"] = Actor.FLAG_BACK_TO_WORK,
+--            }
+--            for k,v in pairs(actionFlags) do
+--                if self:HasFlag(v) then
+--                    c = c ..k .."\n"
+--                end
+--            end
+--            -- end
+--        end
+--        table.insert(self.m_StateInfo, 1, a .. b.. c.. debug.traceback())
+--        -- self.m_StateInfo = debug.traceback() .. "\n\n" .. (self.m_StateInfo or "")
+--    end
+--    self.m_nextState = state
+--    state.m_stateParams = params
+--end
+--
+--function Actor:ClearEntity()
+--end
+--
+--function Actor:InitState(state)
+--    if not self[state] then
+--        self[state] = Class(state)
+--        self[state].name = state
+--        self[state].parent = self
+--    end
+--
+--    self[state].InitSubState = function(self, subState)
+--        if self[subState] then
+--            self[subState] = {}
+--            self[subState].subName = subState
+--        end
+--        return self[subState]
+--    end
+--
+--    self[state].SetAnimator = function(self, action, keyFrames)
+--        for k, v in pairs(keyFrames or {}) do
+--            AnimationUtil.AddKeyFrameEventOnObj(self.parent.m_go, v.key, v.func)
+--        end
+--        if action then
+--            local animator = self.parent.m_go and self.parent.m_go:GetComponent("Animator") or nil-- UIView:GetComp(parent.m_go, "Animator")
+--            if animator then
+--                animator:SetInteger("Action", action)
+--            end
+--        end
+--        self.ClearAnimator = function()
+--            for k, v in pairs(keyFrames or {}) do
+--                AnimationUtil.AddKeyFrameEventOnObj(self.parent.m_go, v.key, nil)
+--            end
+--        end
+--    end
+--
+--    self[state].CreateTimer = function(self, intervalInMilliSec, func, isLoop, execImmediately, isRestart)
+--        if self.m_timer then
+--            if isRestart then
+--                self:StopTimer()
+--            else
+--                return
+--            end
+--        end
+--        self.m_timer = GameTimer:CreateNewMilliSecTimer(intervalInMilliSec, func, isLoop, execImmediately)
+--        --print("====AI test the create ai timer is:"..intervalInMilliSec)
+--    end
+--
+--    self[state].StopTimer = function(self)
+--        GameTimer:StopTimer(self.m_timer)
+--        self.m_timer = nil
+--    end
+--    return self[state]
+--end
+--
+--function Actor:OverrideState(state)
+--    if not state then
+--        return
+--    end
+--
+--    state = Class(state.name.."Ex", state)
+--    self[state.name] = state
+--    return state
+--end
+--
+--function Actor:OverrideStates()
+--end
+--
+--function Actor:GetColliderResponse()
+--    return ColliderResponse
+--end
+--
+----[[
+--    @desc: 角色模型换装成功，更改模型相关内容
+--    author:{author}
+--    time:2022-11-30 16:18:42
+--    --@personID:
+--	--@type:
+--	--@oldID:
+--	--@newID:
+--    @return:
+--]]
+--function Actor:ChangeDressUp(type, oldID, newID)
+--    --print("ChangeDressUp:type is:"..type.." oldID:"..oldID.." newID:"..newID.." personID:"..self.m_personID)
+--    --现在先处理时装的换装
+--    if type == 3 then
+--        if newID > 0 then
+--            local itemConfig = CfgMgr.config_equipment[newID]
+--            if itemConfig and self.m_sex > 0 then
+--                if itemConfig.sex ~= 3 and itemConfig.sex ~= self.m_sex then
+--                    return
+--                end
+--            else
+--                return
+--            end
+--            local prefab = itemConfig.path..itemConfig.prefab..".prefab"
+--            local loadGoCb = function(go)
+--                if self.m_go then
+--                    self:DrawOffPersonAllJewerly()
+--                    if oldID == 0 then
+--                        self:DelInitModelJewerly()
+--                    end
+--                    local fashionGo = self:BindFashionNewMeshToOldMesh(self.m_go,go)
+--                    if not fashionGo then
+--                        UnityHelper.DestroyGameObject(go)
+--                       return
+--                    end
+--                    local modelGO = UnityHelper.FindTheChildByGo(self.m_go, "Model")
+--                    if modelGO then
+--                        modelGO:SetActive(false)
+--                    end
+--                    fashionGo:SetActive(true)
+--
+--                    self:RefreshFloorAreaTrigger()
+--                end
+--            end
+--            GameResMgr:AInstantiateObjectAsyncManual(prefab, self, loadGoCb)
+--        else
+--            --脱掉时装的处理
+--            local modelGo = UnityHelper.FindTheChildByGo(self.m_go, "Model")
+--            local skinGo = UnityHelper.FindTheChildByGo(self.m_go, "Skin")
+--            if skinGo then
+--                UnityHelper.DestroyGameObject(skinGo)
+--            end
+--            if modelGo then
+--                modelGo:SetActive(true)
+--            end
+--            --恢复所有初始化挂件装备
+--            self:InitConfigJewerly()
+--        end
+--    elseif type == 1 then
+--        --挂件添加
+--        if newID > 0 then
+--            local itemConfig = CfgMgr.config_equipment[newID]
+--            if not itemConfig then
+--                return
+--            end
+--            --step1检测当前骨骼下是否有子节点
+--            local boneTran = UnityHelper.FindTheChild(self.m_go, "mixamorig:Hips/"..itemConfig.pos)
+--            if not boneTran then
+--                return
+--            end
+--            UnityHelper.DeleteAllChildrenGo(boneTran)
+--            --step2添加挂件到对应的骨骼节点下
+--            if itemConfig and self.m_sex > 0 then
+--                if itemConfig.sex ~= 0  then
+--                    if itemConfig.sex ~= 3 and itemConfig.sex ~= self.m_sex then
+--                        return
+--                    end
+--                end
+--            else
+--                return
+--            end
+--            local prefab = itemConfig.path..itemConfig.prefab..".prefab"
+--            local loadGoCb = function(go)
+--                local boneTran = UnityHelper.FindTheChild(self.m_go, "mixamorig:Hips/"..itemConfig.pos)
+--                if boneTran then
+--                    UnityHelper.AddChildToParent(boneTran, go.transform)
+--                else
+--                    UnityHelper.DestroyGameObject(go)
+--                end
+--
+--                self:RefreshFloorAreaTrigger()
+--            end
+--            GameResMgr:AInstantiateObjectAsyncManual(prefab, self, loadGoCb)
+--        else
+--            --脱掉挂件
+--            if oldID > 0 then
+--                local itemConfig = CfgMgr.config_equipment[oldID]
+--                if not itemConfig then
+--                    return
+--                end
+--                --step1检测当前骨骼下是否有子节点
+--                local boneTran = UnityHelper.FindTheChild(self.m_go, "mixamorig:Hips/"..itemConfig.pos)
+--                if not boneTran then
+--                    return
+--                end
+--                UnityHelper.DeleteAllChildrenGo(boneTran)
+--                --step 2检测当前挂件下是否有初始化的挂件需要穿上
+--                self:CheckInitJewerlyDress(oldID)
+--
+--                self:RefreshFloorAreaTrigger()
+--            end
+--        end
+--    end
+--end
+--
+----[[
+--    @desc: 根据角色的换装存档更换换装的模型增加饰品等相关逻辑,或者读取一些初始化换装的内容
+--    author:{author}
+--    time:2022-11-30 16:19:39
+--    @return:
+--]]
+--function Actor:InitWithDressUp()
+--    --print("InitWithDressUp::"..self.m_personID)
+--    --如果角色的id>0的话说明该角色是有换装的，需要检测一下1.配置上是否有默认装扮，2.存档上是否有保存的装扮
+--    if self.m_personID > 0 then
+--        --step1.先做配置上的换装
+--        --step2.做存档上的换装
+--        local curDressUpData = DressUpDataManager:GetCurrentPersonAllDressUp(self.m_personID)
+--        if Tools:GetTableSize(curDressUpData) > 0 then
+--            local fashionID = nil
+--             self.initJewelryIDList = {}
+--            for _, v in pairs(curDressUpData) do
+--                local itemConfig = CfgMgr.config_equipment[v]
+--                if itemConfig then
+--                    if itemConfig.type == 3 then
+--                        fashionID = itemConfig
+--                    elseif itemConfig.type == 1 then
+--                        table.insert(self.initJewelryIDList, v)
+--                    end
+--                end
+--            end
+--            -- 时装更换
+--            if fashionID then
+--                local prefab = fashionID.path..fashionID.prefab..".prefab"
+--                local loadGoCb = function(go)
+--                    if self.m_go then
+--                        -- local skinGo = UnityHelper.FindTheChildByGo(self.m_go, "Skin")
+--                        -- if skinGo then
+--                        --     UnityHelper.DestroyGameObject(skinGo)
+--                        -- end
+--                        local fashionGo = self:BindFashionNewMeshToOldMesh(self.m_go,go)
+--                        if not fashionGo then
+--                            UnityHelper.DestroyGameObject(go)
+--                            return
+--                        end
+--                        fashionGo:SetActive(true)
+--
+--                        local modelGO = UnityHelper.FindTheChildByGo(self.m_go, "Model")
+--                        if modelGO then
+--                            modelGO:SetActive(false)
+--                        end
+--                        self:DelInitModelJewerly()
+--                        self:RefreshFloorAreaTrigger()
+--                    end
+--                end
+--                GameResMgr:AInstantiateObjectAsyncManual(prefab, self, loadGoCb)
+--            end
+--            --穿戴挂件可能有多个，加载模型是异步的原因需要心跳加载，不能for循环加载
+--            if self.initJewelryTimeHander then
+--                GameTimer:StopTimer(self.initJewelryTimeHander)
+--                self.initJewelryTimeHander = nil
+--            end
+--            self.initJewelryTimeHander = GameTimer:CreateNewTimer(1, function()
+--                if Tools:GetTableSize(self.initJewelryIDList) > 0 then
+--                    local id = table.remove(self.initJewelryIDList, 1)
+--                    local itemConfig = CfgMgr.config_equipment[id]
+--                    if not itemConfig then
+--                        return
+--                    end
+--                    --step1检测当前骨骼下是否有子节点
+--                    local boneTran = UnityHelper.FindTheChild(self.m_go, "mixamorig:Hips/"..itemConfig.pos)
+--                    if not boneTran then
+--                        return
+--                    end
+--                    UnityHelper.DeleteAllChildrenGo(boneTran)
+--                    --step2添加挂件到对应的骨骼节点下
+--                    if itemConfig and self.m_sex > 0 then
+--                        if itemConfig.sex ~= 0  then
+--                            if itemConfig.sex ~= 3 and itemConfig.sex ~= self.m_sex then
+--                                return
+--                            end
+--                        end
+--                    else
+--                        return
+--                    end
+--                    local prefab = itemConfig.path..itemConfig.prefab..".prefab"
+--                    local loadGoCb = function(go)
+--                        local boneTran = UnityHelper.FindTheChild(self.m_go, "mixamorig:Hips/"..itemConfig.pos)
+--                        UnityHelper.DeleteAllChildrenGo(boneTran)
+--                        if boneTran then
+--                            UnityHelper.AddChildToParent(boneTran, go.transform)
+--                        else
+--                            UnityHelper.DestroyGameObject(go)
+--                        end
+--
+--                        self:RefreshFloorAreaTrigger()
+--                    end
+--                    GameResMgr:AInstantiateObjectAsyncManual(prefab, self, loadGoCb)
+--                else
+--                    GameTimer:StopTimer(self.initJewelryTimeHander)
+--                    self.initJewelryTimeHander = nil
+--                end
+--            end, true, true)
+--        end
+--    end
+--end
+--
+--function Actor:BindFashionNewMeshToOldMesh(parentGo, meshGo)
+--    return UnityHelper.ChangeSkinnedMeshAndBones(parentGo, meshGo)
+--end
+--
+--function Actor:DrawOffPersonAllJewerly(drawOffIDs)
+--    if not drawOffIDs then
+--        return
+--    end
+--    for k, v in pairs(drawOffIDs) do
+--        local itemConfig = CfgMgr.config_equipment[v]
+--        if itemConfig then
+--            local boneTran = UnityHelper.FindTheChild(self.m_go, "mixamorig:Hips/"..itemConfig.pos)
+--            if boneTran then
+--                UnityHelper.DeleteAllChildrenGo(boneTran)
+--            end
+--        end
+--    end
+--end
+--
+----[[
+--    @desc:换时装需要清除一下裸妆的装饰物
+--    author:{author}
+--    time:2022-12-08 16:16:27
+--    @return:
+--]]
+--function Actor:DelInitModelJewerly()
+--    local employConfig = CfgMgr.config_employees[self.m_personID]
+--    if not employConfig then
+--        return
+--    end
+--    if Tools:GetTableSize(employConfig.deco) > 0 then
+--        self:DrawOffPersonAllJewerly(employConfig.deco)
+--    end
+--end
+----[[
+--    @desc: 用于先初始化其模型的挂件
+--    author:{author}
+--    time:2022-12-08 09:41:16
+--    --@callback:
+--    @return:
+--]]
+--function Actor:InitConfigJewerly(callback)
+--    if self.m_personID > 0 then
+--        local configItem = CfgMgr.config_employees[self.m_personID]
+--        if not configItem then
+--            if callback then
+--                callback()
+--            end
+--            return
+--        end
+--        if Tools:GetTableSize(configItem.deco) > 0 then
+--            if self.initJewelryTimeHander then
+--                GameTimer:StopTimer(self.initJewelryTimeHander)
+--                self.initJewelryTimeHander = nil
+--            end
+--            local index = 1
+--            self.initJewelryTimeHander = GameTimer:CreateNewTimer(1, function()
+--                if index > Tools:GetTableSize(configItem.deco) then
+--                    GameTimer:StopTimer(self.initJewelryTimeHander)
+--                    self.initJewelryTimeHander = nil
+--                end
+--                local dressConfig = CfgMgr.config_equipment[configItem.deco[index]]
+--                if dressConfig then
+--                    local prefab = dressConfig.path..dressConfig.prefab..".prefab"
+--                    local loadGoCb = function(go)
+--                        local boneTran = UnityHelper.FindTheChild(self.m_go, "mixamorig:Hips/"..dressConfig.pos)
+--                        if boneTran then
+--                            UnityHelper.AddChildToParent(boneTran, go.transform)
+--                        else
+--                            UnityHelper.DestroyGameObject(go)
+--                        end
+--
+--                        self:RefreshFloorAreaTrigger()
+--                    end
+--                    GameResMgr:AInstantiateObjectAsyncManual(prefab, self, loadGoCb)
+--                end
+--                index  = index + 1
+--            end, true, true)
+--        end
+--    end
+--    if callback then
+--        callback()
+--    end
+--end
+--
+--function Actor:CheckInitJewerlyDress(dressOffID)
+--    local employConfig = CfgMgr.config_employees[self.m_personID]
+--    if not employConfig then
+--        return
+--    end
+--    local dressOffConfig = CfgMgr.config_equipment[dressOffID]
+--    if not dressOffConfig then
+--        return
+--    end
+--    local initConfig = nil
+--    for _, v in pairs(employConfig.deco) do
+--        local tempConfig = CfgMgr.config_equipment[v]
+--        if tempConfig and tempConfig.part ~= 0 and tempConfig.part == dressOffConfig.part then
+--            initConfig = tempConfig
+--            break
+--        end
+--    end
+--    if initConfig then
+--        local prefab = initConfig.path..initConfig.prefab..".prefab"
+--        local loadGoCb = function(go)
+--            local boneTran = UnityHelper.FindTheChild(self.m_go, "mixamorig:Hips/"..initConfig.pos)
+--            if boneTran then
+--                UnityHelper.AddChildToParent(boneTran, go.transform)
+--            else
+--                UnityHelper.DestroyGameObject(go)
+--            end
+--        end
+--        GameResMgr:AInstantiateObjectAsyncManual(prefab, self, loadGoCb)
+--    end
+--end
+--
+--function Actor:DrawOffCurrentFashion()
+--    local modelGo = UnityHelper.FindTheChildByGo(self.m_go, "Model")
+--    local skinGo = UnityHelper.FindTheChildByGo(self.m_go, "Skin")
+--    if skinGo then
+--        UnityHelper.DestroyGameObject(skinGo)
+--    end
+--    if modelGo then
+--        modelGo:SetActive(true)
+--    end
+--end
+--
+--function Actor:RefreshFloorAreaTrigger()
+--    if self.m_personID > 0 then
+--        if self.m_sceneGroundGo then
+--            UnityHelper.IgnoreRendererByObject(self.m_sceneGroundGo, self.m_go)
+--        end
+--    end
+--end
+--
+--function Actor:SetFloorHideFlag(hideCheckGo)
+--    if self.m_personID > 0 then
+--        self.m_sceneGroundGo = hideCheckGo
+--    end
+--end
+--
+--function Actor:SetModeActive(flag)
+--    if self.m_go then
+--        self.m_go:SetActive(flag)
+--    end
+--end
+--
+----[[
+--    @desc: 为了竞选添加的获取当前boss的gameobject，这个只能硬写了，当前没有actor管理的相关逻辑
+--    author:{author}
+--    time:2023-08-31 15:01:26
+--    @return:
+--]]
+--function Actor:GetEntityGo()
+--    return self.m_go
+--end
+--
+--function Actor:ConstructTrigger(isEnter, actorGo, hashCode)
+--    local isDay = GameTableDefine.LightManager:IsDayOrNight() or isEnter
+--    if actorGo.transform.parent then
+--        if not isEnter then
+--            for k, v in pairs(InActorGos or {}) do
+--                if k == hashCode then
+--                    InActorGos[k] = nil
+--                    break
+--                end
+--            end
+--            if not OutActorGos then
+--                OutActorGos = {}
+--            end
+--            OutActorGos[hashCode] = actorGo.transform.parent.gameObject
+--
+--        else
+--
+--            for k, v in pairs(OutActorGos or {}) do
+--                if k == hashCode then
+--                    OutActorGos[k] = nil
+--                    break
+--                end
+--            end
+--            if not InActorGos then
+--                InActorGos = {}
+--            end
+--            InActorGos[hashCode] = actorGo.transform.parent.gameObject
+--        end
+--        UnityHelper.ChangeActorDayOrNightMatColor(actorGo.transform.parent.gameObject, isDay)
+--    end
+--end
+--
+--function Actor:InitEventReg()
+--    EventManager:RegEvent("CONSTRUCT_ON_TRIGGER", function(isEnter, actorGo, hashCode)
+--        self:ConstructTrigger(isEnter, actorGo, hashCode)
+--    end)
+--end
+--
+--function Actor:SceneSwtichDayOrLight(isDay)
+--    for _, go in pairs(OutActorGos or {}) do
+--        UnityHelper.ChangeActorDayOrNightMatColor(go, isDay)
+--    end
+--end
+--
+----[[
+--    @desc:将一些只在室外产生的角色对象放到对象管理器中
+--    author:{author}
+--    time:2023-09-05 15:19:16
+--    --@go:
+--	--@isAdd:
+--    @return:
+--]]
+--function Actor:OutActorChange(go, isAdd)
+--    if not FloorMode:IsProcessDayNightScene() then
+--        return
+--    end
+--    local triggerGo = UnityHelper.FindTheChildByGo(go, "Trigger")
+--    local hashCode = nil
+--    if triggerGo then
+--        hashCode = triggerGo:GetHashCode()
+--    end
+--    if not hashCode then
+--        return
+--    end
+--    if InActorGos[hashCode] then
+--        return
+--    end
+--    if isAdd then
+--        OutActorGos[hashCode] = go
+--        --设置一下当前的颜色
+--        UnityHelper.ChangeActorDayOrNightMatColor(go, GameTableDefine.LightManager:IsDayOrNight())
+--    else
+--        OutActorGos[hashCode] = nil
+--    end
+--end
+--
+--return Actor

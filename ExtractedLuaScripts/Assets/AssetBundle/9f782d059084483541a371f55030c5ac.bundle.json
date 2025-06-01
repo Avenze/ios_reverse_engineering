@@ -1,0 +1,29 @@
+{
+	"m_AssetBundleName": "9f782d059084483541a371f55030c5ac.bundle",
+	"m_Container": {
+		"Assets/Scripts/Framework/Scene/BaseScene.txt": {
+			"m_Asset": { "m_Collection": "cab-8dd426d84e55f1443e07208bb8cd384c", "m_PathID": 5203585590226630064 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-8dd426d84e55f1443e07208bb8cd384c", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-8dd426d84e55f1443e07208bb8cd384c", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "9f782d059084483541a371f55030c5ac.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-8dd426d84e55f1443e07208bb8cd384c", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-8dd426d84e55f1443e07208bb8cd384c", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-8dd426d84e55f1443e07208bb8cd384c", "m_PathID": 5203585590226630064 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

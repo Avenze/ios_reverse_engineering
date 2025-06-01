@@ -1,0 +1,41 @@
+{
+	"m_AssetBundleName": "df7f7213b2d7b03c5dcbbd6e825f03f1.bundle",
+	"m_Container": {
+		"Assets/Scripts/Framework/Lua/Class.txt": {
+			"m_Asset": { "m_Collection": "cab-ad242d9e4d51090dea9b14142d0e6652", "m_PathID": -6213869297528758979 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/Framework/Lua/LuaMonoBase.txt": {
+			"m_Asset": { "m_Collection": "cab-ad242d9e4d51090dea9b14142d0e6652", "m_PathID": -3570126306976554165 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/Framework/Lua/XLuaUtils.txt": {
+			"m_Asset": { "m_Collection": "cab-ad242d9e4d51090dea9b14142d0e6652", "m_PathID": -7377693721300544890 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-ad242d9e4d51090dea9b14142d0e6652", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-ad242d9e4d51090dea9b14142d0e6652", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "df7f7213b2d7b03c5dcbbd6e825f03f1.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-ad242d9e4d51090dea9b14142d0e6652", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-ad242d9e4d51090dea9b14142d0e6652", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-ad242d9e4d51090dea9b14142d0e6652", "m_PathID": -6213869297528758979 },
+		{ "m_Collection": "cab-ad242d9e4d51090dea9b14142d0e6652", "m_PathID": -3570126306976554165 },
+		{ "m_Collection": "cab-ad242d9e4d51090dea9b14142d0e6652", "m_PathID": -7377693721300544890 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

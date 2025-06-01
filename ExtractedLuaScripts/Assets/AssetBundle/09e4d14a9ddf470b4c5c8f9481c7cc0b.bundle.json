@@ -1,0 +1,47 @@
+{
+	"m_AssetBundleName": "09e4d14a9ddf470b4c5c8f9481c7cc0b.bundle",
+	"m_Container": {
+		"Assets/Scripts/CodeRefactoring/Interactions/Elevator.txt": {
+			"m_Asset": { "m_Collection": "cab-49d54a3f9cf0aba1138da667db8bb656", "m_PathID": 8295576594070410472 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/Interactions/ElevatorManager.txt": {
+			"m_Asset": { "m_Collection": "cab-49d54a3f9cf0aba1138da667db8bb656", "m_PathID": 4345627992368943492 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/Interactions/InteractionsManager.txt": {
+			"m_Asset": { "m_Collection": "cab-49d54a3f9cf0aba1138da667db8bb656", "m_PathID": -4560549021682018314 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/Interactions/InteractionsNew.txt": {
+			"m_Asset": { "m_Collection": "cab-49d54a3f9cf0aba1138da667db8bb656", "m_PathID": 5711251824364828820 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-49d54a3f9cf0aba1138da667db8bb656", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-49d54a3f9cf0aba1138da667db8bb656", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "09e4d14a9ddf470b4c5c8f9481c7cc0b.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-49d54a3f9cf0aba1138da667db8bb656", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-49d54a3f9cf0aba1138da667db8bb656", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-49d54a3f9cf0aba1138da667db8bb656", "m_PathID": 5711251824364828820 },
+		{ "m_Collection": "cab-49d54a3f9cf0aba1138da667db8bb656", "m_PathID": -4560549021682018314 },
+		{ "m_Collection": "cab-49d54a3f9cf0aba1138da667db8bb656", "m_PathID": 4345627992368943492 },
+		{ "m_Collection": "cab-49d54a3f9cf0aba1138da667db8bb656", "m_PathID": 8295576594070410472 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

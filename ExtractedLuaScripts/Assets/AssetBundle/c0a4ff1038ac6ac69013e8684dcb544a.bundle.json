@@ -1,0 +1,41 @@
+{
+	"m_AssetBundleName": "c0a4ff1038ac6ac69013e8684dcb544a.bundle",
+	"m_Container": {
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/EventChatter/EventChatterComing.txt": {
+			"m_Asset": { "m_Collection": "cab-f95c4089c97fe1933a17c610181f9adc", "m_PathID": -1587283779915747178 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/EventChatter/EventChatterLeaving.txt": {
+			"m_Asset": { "m_Collection": "cab-f95c4089c97fe1933a17c610181f9adc", "m_PathID": -5993457158810527005 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/EventChatter/EventChatterWaiting.txt": {
+			"m_Asset": { "m_Collection": "cab-f95c4089c97fe1933a17c610181f9adc", "m_PathID": -1349218955883288874 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-f95c4089c97fe1933a17c610181f9adc", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-f95c4089c97fe1933a17c610181f9adc", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "c0a4ff1038ac6ac69013e8684dcb544a.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-f95c4089c97fe1933a17c610181f9adc", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-f95c4089c97fe1933a17c610181f9adc", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-f95c4089c97fe1933a17c610181f9adc", "m_PathID": -5993457158810527005 },
+		{ "m_Collection": "cab-f95c4089c97fe1933a17c610181f9adc", "m_PathID": -1587283779915747178 },
+		{ "m_Collection": "cab-f95c4089c97fe1933a17c610181f9adc", "m_PathID": -1349218955883288874 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

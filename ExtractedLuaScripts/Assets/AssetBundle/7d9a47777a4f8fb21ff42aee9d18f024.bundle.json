@@ -1,0 +1,29 @@
+{
+	"m_AssetBundleName": "7d9a47777a4f8fb21ff42aee9d18f024.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/DressUp/DressUpDataManager.txt": {
+			"m_Asset": { "m_Collection": "cab-b9818c41c837c841e61b1fdc257c2f4c", "m_PathID": -3511193553672231396 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-b9818c41c837c841e61b1fdc257c2f4c", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-b9818c41c837c841e61b1fdc257c2f4c", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "7d9a47777a4f8fb21ff42aee9d18f024.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-b9818c41c837c841e61b1fdc257c2f4c", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-b9818c41c837c841e61b1fdc257c2f4c", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-b9818c41c837c841e61b1fdc257c2f4c", "m_PathID": -3511193553672231396 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

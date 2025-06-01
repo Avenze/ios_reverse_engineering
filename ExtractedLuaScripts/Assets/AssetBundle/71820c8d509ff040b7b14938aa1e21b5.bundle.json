@@ -1,0 +1,41 @@
+{
+	"m_AssetBundleName": "71820c8d509ff040b7b14938aa1e21b5.bundle",
+	"m_Container": {
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/EventBatman/EventBatmanComing.txt": {
+			"m_Asset": { "m_Collection": "cab-194b8de7ba07b6a22330d6883d3f21dc", "m_PathID": -5789177209430725226 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/EventBatman/EventBatmanLeaving.txt": {
+			"m_Asset": { "m_Collection": "cab-194b8de7ba07b6a22330d6883d3f21dc", "m_PathID": 1124585962282109626 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/CodeRefactoring/AI/StateMachines/EventBatman/EventBatmanWaiting.txt": {
+			"m_Asset": { "m_Collection": "cab-194b8de7ba07b6a22330d6883d3f21dc", "m_PathID": -3116134423051232537 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-194b8de7ba07b6a22330d6883d3f21dc", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-194b8de7ba07b6a22330d6883d3f21dc", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "71820c8d509ff040b7b14938aa1e21b5.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-194b8de7ba07b6a22330d6883d3f21dc", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-194b8de7ba07b6a22330d6883d3f21dc", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-194b8de7ba07b6a22330d6883d3f21dc", "m_PathID": -5789177209430725226 },
+		{ "m_Collection": "cab-194b8de7ba07b6a22330d6883d3f21dc", "m_PathID": 1124585962282109626 },
+		{ "m_Collection": "cab-194b8de7ba07b6a22330d6883d3f21dc", "m_PathID": -3116134423051232537 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

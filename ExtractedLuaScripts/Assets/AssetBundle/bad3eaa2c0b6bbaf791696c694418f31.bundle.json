@@ -1,0 +1,197 @@
+{
+	"m_AssetBundleName": "bad3eaa2c0b6bbaf791696c694418f31.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCClubCenterUI.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 2834526663931889102 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCClubCenterUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 1639259567900962682 },
+			"m_PreloadIndex": 28,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCHealthCenterUI.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 6186202088153520079 },
+			"m_PreloadIndex": 24,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCHealthCenterUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 2032535143489079420 },
+			"m_PreloadIndex": 4,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCLeagueRankUI.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 8244592306025243 },
+			"m_PreloadIndex": 7,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCLeagueRankUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -7829604346818338518 },
+			"m_PreloadIndex": 10,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCLeagueUpUI.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 6440093841856945509 },
+			"m_PreloadIndex": 22,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCLeagueUpUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -5113375892828074921 },
+			"m_PreloadIndex": 6,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCLevelupUI.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -8800442717856485050 },
+			"m_PreloadIndex": 23,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCLevelupUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 7718814435158430219 },
+			"m_PreloadIndex": 25,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCManagerInfoUI.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -4387149381168222558 },
+			"m_PreloadIndex": 16,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCManagerInfoUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 274682455555924207 },
+			"m_PreloadIndex": 21,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCPopupUI.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 4031965851865198670 },
+			"m_PreloadIndex": 17,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCPopupUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 6401098880387916964 },
+			"m_PreloadIndex": 18,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCRoomUnlockUI.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 12122064187962589 },
+			"m_PreloadIndex": 11,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCRoomUnlockUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 1553954411876291725 },
+			"m_PreloadIndex": 20,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCSeasonSettlementUI.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -8822992052110513711 },
+			"m_PreloadIndex": 27,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCSeasonSettlementUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 6130781232619280216 },
+			"m_PreloadIndex": 5,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCSettlementUI.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 21295135455295331 },
+			"m_PreloadIndex": 26,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCSettlementUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -3832860156291430048 },
+			"m_PreloadIndex": 8,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCStadiumUI.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -5732718673781200983 },
+			"m_PreloadIndex": 13,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCStadiumUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -3068669851297130743 },
+			"m_PreloadIndex": 19,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCTacticalCenterUI.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 2690691538948002342 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCTacticalCenterUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 2403245754042568361 },
+			"m_PreloadIndex": 15,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCTrainingGroundUI.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -4285784819281561475 },
+			"m_PreloadIndex": 9,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCTrainingGroundUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 5247275930934910764 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCTrainningRewardUI.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 3220640705873090447 },
+			"m_PreloadIndex": 14,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FCTrainningRewardUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 673900252961587478 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/FootballClub/UI/FootballClubLeagueRankDataManager.txt": {
+			"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 3456766888504957678 },
+			"m_PreloadIndex": 12,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "bad3eaa2c0b6bbaf791696c694418f31.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 5247275930934910764 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 2690691538948002342 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 673900252961587478 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 2834526663931889102 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 2032535143489079420 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 6130781232619280216 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -5113375892828074921 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 8244592306025243 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -3832860156291430048 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -4285784819281561475 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -7829604346818338518 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 12122064187962589 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 3456766888504957678 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -5732718673781200983 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 3220640705873090447 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 2403245754042568361 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -4387149381168222558 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 4031965851865198670 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 6401098880387916964 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -3068669851297130743 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 1553954411876291725 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 274682455555924207 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 6440093841856945509 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -8800442717856485050 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 6186202088153520079 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 7718814435158430219 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 21295135455295331 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": -8822992052110513711 },
+		{ "m_Collection": "cab-fc50465c4a4a386c43cc6158fd64459e", "m_PathID": 1639259567900962682 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

@@ -1,0 +1,65 @@
+{
+	"m_AssetBundleName": "32df7870a6415c232e0fea7e8b7a6d5e.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/CycleInstance/NightClub/CycleNightClubBluePrintManager.txt": {
+			"m_Asset": { "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": -7325176900899446116 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/NightClub/CycleNightClubHeroManager.txt": {
+			"m_Asset": { "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": -4805496166050434365 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/NightClub/CycleNightClubModel.txt": {
+			"m_Asset": { "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": -4257502992079699248 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/NightClub/CycleNightClubRankManager.txt": {
+			"m_Asset": { "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": -6521360795389110780 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/NightClub/CycleNightClubRoom.txt": {
+			"m_Asset": { "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": -4215422382661434725 },
+			"m_PreloadIndex": 4,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/NightClub/CycleNightClubScene.txt": {
+			"m_Asset": { "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": -2012153118376641172 },
+			"m_PreloadIndex": 5,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/NightClub/CycleNightClubTaskManager.txt": {
+			"m_Asset": { "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": -335142947793405942 },
+			"m_PreloadIndex": 6,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "32df7870a6415c232e0fea7e8b7a6d5e.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": -6521360795389110780 },
+		{ "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": -4257502992079699248 },
+		{ "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": -4805496166050434365 },
+		{ "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": -7325176900899446116 },
+		{ "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": -4215422382661434725 },
+		{ "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": -2012153118376641172 },
+		{ "m_Collection": "cab-4e1f140968bb4a39006445741715235b", "m_PathID": -335142947793405942 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

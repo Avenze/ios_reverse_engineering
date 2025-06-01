@@ -1,0 +1,161 @@
+{
+	"m_AssetBundleName": "3c9ecabcaa937ae2f1b33508ada4413f.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/Floors/UI/BuildingUI.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 4439236672237549211 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/BuildingUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 2504713611405120500 },
+			"m_PreloadIndex": 15,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/CompanyLvUpUI.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -6397896714654098340 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/CompanyLvUpUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 6747381584384676365 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/CompanysUI.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 5975199512083227025 },
+			"m_PreloadIndex": 12,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/CompanysUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 7321714731721636784 },
+			"m_PreloadIndex": 8,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/ContractUI.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 4668061552535935015 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/ContractUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 4767882392896319507 },
+			"m_PreloadIndex": 19,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/ForbesRewardUI.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -3301419754401930629 },
+			"m_PreloadIndex": 14,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/ForbesRewardUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 4690377672425878289 },
+			"m_PreloadIndex": 18,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/HUD.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 2380281105306007305 },
+			"m_PreloadIndex": 4,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/HUDView.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 7839058559169214366 },
+			"m_PreloadIndex": 9,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/HouseContractUI.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -4424298429396321400 },
+			"m_PreloadIndex": 5,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/HouseContractView.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -961466346897122048 },
+			"m_PreloadIndex": 7,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/RenewUI.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 3032537863973828031 },
+			"m_PreloadIndex": 21,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/RenewUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -5464837149640159141 },
+			"m_PreloadIndex": 22,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/RoomBuildingUI.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 249980779541531852 },
+			"m_PreloadIndex": 20,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/RoomBuildingUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -8340808374448066030 },
+			"m_PreloadIndex": 13,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/RoomFloatUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 2888768133136166331 },
+			"m_PreloadIndex": 16,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/RoomUnlockUI.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 4065807844452818873 },
+			"m_PreloadIndex": 17,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/RoomUnlockUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -4416816878586228309 },
+			"m_PreloadIndex": 11,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/UnlockingSkipUI.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -9180589417146156541 },
+			"m_PreloadIndex": 10,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/Floors/UI/UnlockingSkipUIView.txt": {
+			"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -823419265018867990 },
+			"m_PreloadIndex": 6,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "3c9ecabcaa937ae2f1b33508ada4413f.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 6747381584384676365 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 4439236672237549211 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 4668061552535935015 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -6397896714654098340 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 2380281105306007305 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -4424298429396321400 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -823419265018867990 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -961466346897122048 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 7321714731721636784 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 7839058559169214366 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -9180589417146156541 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -4416816878586228309 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 5975199512083227025 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -8340808374448066030 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -3301419754401930629 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 2504713611405120500 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 2888768133136166331 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 4065807844452818873 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 4690377672425878289 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 4767882392896319507 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 249980779541531852 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": 3032537863973828031 },
+		{ "m_Collection": "cab-9980db83809158a7a82a16c5cf31c838", "m_PathID": -5464837149640159141 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

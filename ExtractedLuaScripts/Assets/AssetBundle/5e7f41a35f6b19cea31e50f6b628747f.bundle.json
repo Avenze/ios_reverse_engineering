@@ -1,0 +1,71 @@
+{
+	"m_AssetBundleName": "5e7f41a35f6b19cea31e50f6b628747f.bundle",
+	"m_Container": {
+		"Assets/Scripts/GamePlay/CycleInstance/Toy/AI/InstanceClient/CycleToyClientBuy.txt": {
+			"m_Asset": { "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": -6483752751221077969 },
+			"m_PreloadIndex": 5,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Toy/AI/InstanceClient/CycleToyClientCome.txt": {
+			"m_Asset": { "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": -4472333424998960718 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Toy/AI/InstanceClient/CycleToyClientGoToBuy.txt": {
+			"m_Asset": { "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": 5951625032914571806 },
+			"m_PreloadIndex": 2,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Toy/AI/InstanceClient/CycleToyClientGoToPay.txt": {
+			"m_Asset": { "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": -3894243059038965400 },
+			"m_PreloadIndex": 1,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Toy/AI/InstanceClient/CycleToyClientLeave.txt": {
+			"m_Asset": { "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": 5911251263526195700 },
+			"m_PreloadIndex": 7,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Toy/AI/InstanceClient/CycleToyClientPay.txt": {
+			"m_Asset": { "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": -557503325333636937 },
+			"m_PreloadIndex": 3,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Toy/AI/InstanceClient/CycleToyClientWaitToBuy.txt": {
+			"m_Asset": { "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": 7441999428068784580 },
+			"m_PreloadIndex": 4,
+			"m_PreloadSize": 1
+		},
+		"Assets/Scripts/GamePlay/CycleInstance/Toy/AI/InstanceClient/CycleToyClientWaitToPay.txt": {
+			"m_Asset": { "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": 2598626977869041539 },
+			"m_PreloadIndex": 6,
+			"m_PreloadSize": 1
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "5e7f41a35f6b19cea31e50f6b628747f.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": 0 },
+	"m_PreloadTable": [
+		{ "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": -4472333424998960718 },
+		{ "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": -3894243059038965400 },
+		{ "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": 5951625032914571806 },
+		{ "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": -557503325333636937 },
+		{ "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": 7441999428068784580 },
+		{ "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": -6483752751221077969 },
+		{ "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": 2598626977869041539 },
+		{ "m_Collection": "cab-78be81bb5bab30f8feb6b08be0614ab8", "m_PathID": 5911251263526195700 }
+	],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}
